@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/css/user.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
+    <title>评论管理</title>
+</head>
+<body>
+    {{include './common/header.art'}}
+            <div class="content-list">              
+                <div class="container-list">
+                    <div class="content-list-header">
+                        <h3>未读评论：</h3>
+                    </div>
+                    <table id="verify-tb">
+
+    
+                    </table>
+                    <div class="pigination-article" id="pagi">
+                       
+                    </div>                
+                  
+    
+                </div> 
+                
+                <div class="container-list1">
+                    <div class="content-list-header1">
+                        <h3>匿名评论：</h3>
+                    </div>
+                    <table id="verify-tb1">
+
+    
+                    </table>
+                    <div class="pigination-article-1" id="pagi1">
+                       
+                    </div>                
+                  
+    
+                </div>     
+
+
+            </div>
+           
+    </div>
+    <script src="/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/js/pagination.js"></script>
+    <script>
+             $.ajax({
+            url:'/admins/commentMan',
+            data:{page:1},
+            type:'post',
+            success:function(result){
+                const pageIndex=new Pagination('#' + 'pagi', {
+                    total:result.total,
+                    pagesize:12,
+                    pageChange:function(num){
+                          $.ajax({
+                              url:'/admins/commentMan',
+                              type:'post',
+                              data:{page:num},
+                              success:function(res){  
+                                  console.log(res)                             
+                                   var headStr=`<tr>
+                                                    <th>相关文章</th>
+                                                    <th>评论内容</th>
+                                                    <th>发布者</th>
+                                                    <th>操作</th>                
+                                                 </tr>`
+                                    var maxStr='';
+                                    var str='';
+                                $.each(res.result,function(index,items){
+                                  if(items.userId==null){items.userId={};items.userId.username='已被删'};
+                                  if(items.atcId==null){items.atcId={};items.atcId.username='已被删'}
+                                    str+=`<tr>
+                                            <td>${items.atcId.title}</td>
+                                            <td>${items.content}</td>
+                                            <td>${items.userId.username}</td>
+                                            <td id="caozuo">
+                                              <a id="read" index="${items._id}">已读</a>
+                                              <a id="delet" index="${items._id}">删除</a>
+                                            </td>               
+                                          </tr>`
+                                });
+                                maxStr=headStr+str;
+                                $('#verify-tb')[0].innerHTML=maxStr;
+                              }
+                          })
+                    }
+                });
+                pageIndex.init();
+            }
+        });
+$('#verify-tb').on('click','#read',function(){
+    $.ajax({
+        url:'/admins/comment-set',
+        data:{id:$(this).attr('index'),type:'read'},
+        success:function(res){
+           if(res=='bingo'){
+            location.reload();
+           }else{
+               alert('失败');
+           }
+        }
+    })
+})
+$('#verify-tb').on('click','#delet',function(){
+    console.log($(this).attr('index'))
+    $.ajax({
+        url:'/admins/comment-set',
+        data:{id:$(this).attr('index'),type:'delet'},
+        success:function(res){
+           if(res=='bingo'){
+            location.reload();
+           }else{
+               alert('失败');
+           }
+        }
+
+    })
+})
+
+// 匿名评论
+$.ajax({
+            url:'/admins/leaveMan',
+            data:{page:1},
+            type:'post',
+            success:function(result){
+                const pageIndex=new Pagination('#' + 'pagi1', {
+                    total:result.total,
+                    pagesize:12,
+                    pageChange:function(num){
+                          $.ajax({
+                              url:'/admins/leaveMan',
+                              type:'post',
+                              data:{page:num},
+                              success:function(res){  
+                                  console.log(res)                             
+                                   var headStr=`<tr>
+                                                    <th>相关用户</th>
+                                                    <th>评论内容</th> 
+                                                                                     
+                                                    <th>操作</th>                
+                                                 </tr>`
+                                    var maxStr='';
+                                    var str='';
+                                $.each(res.result,function(index,items){
+                                  if(items.userId==null){items.userId={};items.userId.username='已被删'};
+                                  if(items.atcId==null){items.atcId={};items.atcId.username='已被删'}
+                                    str+=`<tr>
+                                            <td>${items.userId.username}</td>
+                                            <td>${items.content}</td>
+                                        
+                                            <td id="caozuo">
+                                              <a id="read1" index="${items._id}">已读</a>
+                                              <a id="delet1" index="${items._id}">删除</a>
+                                            </td>               
+                                          </tr>`
+                                });
+                                maxStr=headStr+str;
+                                $('#verify-tb1')[0].innerHTML=maxStr;
+                              }
+                          })
+                    }
+                });
+                pageIndex.init();
+            }
+        });
+
+$('#verify-tb1').on('click','#read1',function(){
+    $.ajax({
+        url:'/admins/leave-set',
+        data:{id:$(this).attr('index'),type:'read'},
+        success:function(res){
+           if(res=='bingo'){
+            location.reload();
+           }else{
+               alert('失败');
+           }
+        }
+    })
+})
+$('#verify-tb1').on('click','#delet1',function(){
+    console.log($(this).attr('index'))
+    $.ajax({
+        url:'/admins/leave-set',
+        data:{id:$(this).attr('index'),type:'delet'},
+        success:function(res){
+           if(res=='bingo'){
+            location.reload();
+           }else{
+               alert('失败');
+           }
+        }
+
+    })
+})
+
+    </script>
+</body>
+</html>

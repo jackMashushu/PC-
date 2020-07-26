@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/css/user.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
+    <title>用户信息管理</title>
+</head>
+<body>
+    {{include './common/header.art'}}
+            <div class="content-list">
+                <div class="container-list">
+                    <div class="content-list-header">
+                        <h3>提示信息：<span class="warming">{{message}}</span></h3>
+                    </div>
+                    <div class="article-edit">                       
+                        <form method="POST" action="{{path}}" enctype="multipart/form-data">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">用户性名</label>
+                              <input type="text" placeholder="请输入用户名" name="username" id="exampleInputEmail1" value="{{blank&&blank.username}}" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">用户邮箱</label>
+                              <input type="email" placeholder="请输入用户邮箱" value="{{blank&&blank.email}}" name="email" id="exampleInputPassword1">
+                            </div>
+                            <div class="form-group">
+                                <label for="qwe">用户密码</label>
+                                <input type="password" placeholder="请输入用户密码" value="{{blank&&blank.password}}"name="password" id="qwe">
+                              </div>
+                              <div class="form-group">
+                                <label for="qwers">用户身份</label>
+                                <select id="qwers" name="identity" >
+                                    <option {{blank&&blank.identity=='normal'?'':'selected'}} value="admin">管理员</option>                                    
+                                    <option value="normal" {{blank&&blank.identity=='admin'?'':'selected'}}>普通用户</option>
+                                </select>
+                              </div> 
+                              <div class="form-group">
+                                <label for="qwer">设置头像</label>
+                                <input type="file" name="head" value="" id="qwer">
+                                <div id="preview">
+                                  <img src="{{blank&&blank.head}}" style="height: 200px;border-radius: 50%;object-fit: cover;" class="pre-img">
+                                </div>
+            
+                              </div>                
+                            <button type="submit" class="btn btn-primary">{{button}}</button>
+                          </form>   
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+<script>
+  //封面图片及时预览       
+  const picGoter=document.querySelector('#qwer');//文件输入框
+       const pre=document.querySelector('.pre-img');
+       picGoter.onchange=function(){  //监听输入框的状态
+        const reader=new FileReader();  //实例化文件阅读构造函数
+        reader.readAsDataURL(this.files[0]);
+        reader.onload=function(){
+          pre.src=reader.result
+        }
+       }
+       
+</script>
+</body>
+</html>

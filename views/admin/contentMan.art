@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/css/user.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="/admin/css/textarea.css">
+    <script src="/admin/js/editor.js"></script>
+    <title>文章编辑</title>
+</head>
+<body>
+    {{include './common/header.art'}}
+            <div class="content-list">              
+              <div class="content-title"><h5>{{id?'修改文章':'发布新文章'}}</h5></div>            
+                    <!-- kaishi  -->
+                        <div class="article-edit">                       
+                            <form method="POST" action="{{id?'/admins/article-change?id='+id:'/admins/article-add'}}" enctype="multipart/form-data">
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">文章标题</label>
+                                  <input type="text" placeholder="请输入文章标题" name="title" 
+                                  value="{{id?articleDetail.title:''}}" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1">文章作者</label>
+                                  <input type="text" readonly  name="author" id="exampleInputPassword1" 
+                                  value="{{@id?articleDetail.author:userInfo._id}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="qwe">发布时间</label>
+                                    <input type="date"  name="publishDate" id="qwe" >
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="class">栏目选择(必选)</label>
+                                    <select name="class" id="">
+                                      <option value="经典文章">经典文章</option>
+                                      <option value="诗歌词曲">诗歌词曲</option>
+                                      <option value="说文解字">说文解字</option>
+                                      <option value="名家精选">名家精选</option>
+                                      <option value="初中作文">初中作文</option>
+                                      <option value="小学作文">小学作文</option>
+                                      <option value="满分作文">满分作文</option>
+                                      <option value="名言警句">名言警句</option>
+                                      <option value="热点分析">热点分析</option>
+                                      <option value="散文随记">散文随记</option>
+                                      <option value="学习心得">学习心得</option>
+                                      <option value="历史故事">历史故事</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="verify">是否直接发布：</label>
+                                    <select name="verify"  id="verify">
+                                      <option value="0">否</option>
+                                      <option value="1">是</option>                                                      
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="notice">是否发布为公告：</label>
+                                    <select name="notice" id="notice">
+                                      <option value="0">否</option>
+                                      <option value="1">是</option>                                           
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="original">是否原创：</label>
+                                    <select name="original" id="original">
+                                      <option value="0">否</option>
+                                      <option value="1">是</option>                                           
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="isTop">是否置顶：</label>
+                                    <select name="isTop" id="isTop">
+                                      <option value="0">否</option>
+                                      <option value="1">是</option>                                           
+                                    </select>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="keywords">关键词一个(必选)</label>
+                                     <input type="text" name="keywords" id="" value="{{id?articleDetail.keywords:''}}">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="qwer">文章封面</label>
+                                    <input type="file" name="cover" id="qwer">
+                                    <div id="preview">
+                                      <img src="" alt="" class="pre-img">
+                                    </div>
+                                  </div>
+                                  <div class="text-area">
+                                    <h4>请输入文章内容</h4><input class="hhhi" type="text" name="content" value="母猪的产后护理">
+                                    <div id="div1"><p>{{@id?articleDetail.content:''}}</p></div>   
+                                    <button type="button"  id="btn1">保存文章</button>
+                                  </div>
+                                
+                                <button type="submit" class="btn btn-primary">确认发布</button>
+                              </form>   
+                        </div>
+                   <!-- jieshu --> 
+                                                
+        </div>
+    </div>
+    <script>
+      //文本编辑器数据中转
+         const currentInp=document.querySelector('.hhhi');
+         const btn1=document.getElementById('btn1');
+         const E = window.wangEditor
+         const editor= new E('#div1')
+         editor.create()
+         btn1.addEventListener('click', function () {
+        currentInp.value=editor.txt.html();
+    }, false);
+    //封面图片及时预览       
+       const picGoter=document.querySelector('#qwer');
+       const pre=document.querySelector('.pre-img');
+       picGoter.onchange=function(){ 
+        const reader=new FileReader();  
+        reader.readAsDataURL(this.files[0]);
+        reader.onload=function(){
+          pre.src=reader.result
+        }
+       }
+       
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        margin: 0;
+        padding: 0;
+    } 
+    .tools-list{
+        width: 600px;
+        height: 70px;
+         margin:50px auto;
+         display: flex;
+         flex-direction: row;
+    }
+    .icon-btn>img{
+        height: 40px;
+    }
+    .icon-btn{
+        height: 40px;
+        width: 40px;
+        text-decoration: none;
+        margin: 20px;
+        position: relative;
+    }
+    .icon-btn::before{
+        position: absolute;
+        top: 50%;
+        left:50%;
+        z-index: 1;
+    }
+    .icon-btn::after{
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: -9px;
+    width: 150%;
+    height: 150%;
+    box-sizing: border-box;
+    border-radius: 50%;
+    z-index: 0;
+   }
+   .icon-btn::after{
+       border: 3px dashed #ff355a;
+   }
+   .icon-btn-set3::after{
+       border: 3px dashed #13a74b;
+   }
+   .icon-btn:hover:after{
+       animation: st 7s linear infinite;
+   }
+   .icon-btn:hover{
+       animation: sd 7s linear infinite;
+   }
+   @keyframes st {
+       0%{
+           transform: rotate(0);
+       }
+       100%{
+           transform: rotate(360deg);
+       }     
+   }
+  @keyframes sd {
+       0%{
+           transform: rotate(0);
+       }
+       100%{
+           transform: rotate(360deg);
+       }     
+   }
+
+    </style>
+</head>
+<body>
+    <div class="tools-list">
+        <a href="" class="icon-btn"><img  src="./images/icon/tool-change.png" alt=""></a>
+        <a href="" class="icon-btn"><img  src="./images/icon/tools-bagua.png" alt=""></a>
+        <a href="" class="icon-btn icon-btn-set3"><img  src="./images/icon/upload.png" alt=""></a>
+        <a href="" class="icon-btn icon-btn-set4"><img  src="./images/icon/star.png" alt=""></a>
+        <a href="" class="icon-btn icon-btn-set5"><img  src="./images/icon/tool-book.png" alt=""></a>
+    </div>
+</body>
+</html>

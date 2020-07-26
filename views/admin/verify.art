@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/css/user.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
+    <title>文章编辑</title>
+</head>
+<body>
+    {{include './common/header.art'}}
+            <div class="content-list">              
+              <div class="container-list">
+                <div class="content-list-header">
+                    <h3>文章审核：</h3>
+                    <h6>
+                        <a href="/admins/articleMan" class="btn">文章列表</a>
+                    </h6>
+                </div>
+                <table id="verify-tb">
+                    
+
+                </table>
+                <div class="pigination-article" id="pagi">
+                   
+                </div>                
+              
+
+            </div>
+            <!-- 遮罩层 -->
+             <div class="shelter"></div>
+             <div id="previess">
+               <button type="button" id="close">X</button>
+               <span>我是标题</span>
+               <p>我是时间</p>
+               <article>
+                
+               </article>
+               <img src="" alt="">
+
+
+             </div>
+
+    </div>
+    <script src="/js/pagination.js"></script>
+    <script src="/jquery/jquery-3.4.1.min.js"></script>
+    <script>
+
+        $.ajax({
+            url:'/admins/verify',
+            data:{page:1},
+            type:'post',
+            success:function(result){
+                const pageIndex=new Pagination('#' + 'pagi', {
+                    total:result.total,
+                    pagesize:12,
+                    pageChange:function(num){
+                          $.ajax({
+                              url:'/admins/verify',
+                              type:'post',
+                              data:{page:num},
+                              success:function(res){                               
+                                   var headStr=`<tr>
+                                                  <th>文章id</th>
+                                                  <th>标题</th>
+                                                  <th>作者</th>
+                                                  <th>操作</th>                
+                                               </tr>`
+                                    var maxStr='';
+                                    var str='';
+                                $.each(res.result,function(index,items){
+                                    //判断作者是否存在，不存在则替换
+                                  if(items.author==null){items.author={};items.author.username='丢失'};
+                            
+                                    str+=`<tr>
+                                            <td>${items._id}</td>
+                                            <td>${items.title}</td>
+                                            <td>${items.author.username}</td>
+                                            <td id="caozuo">
+                                              <a id="previe" index="${items._id}">预览</a>
+                                              <a id="edt" index="${items._id}">修改</a>
+                                              <a id="delet" index="${items._id}">删除</a>
+                                              <a id="pass" index="${items._id}">通过</a>
+                                            </td>               
+                                          </tr>`
+                                });
+                                maxStr=headStr+str;
+                                $('#verify-tb')[0].innerHTML=maxStr;
+                              }
+                          })
+                    }
+                });
+                pageIndex.init();
+            }
+        });
+window.addEventListener('load',()=>{
+  const pageHeight=$(document).height();
+  const pageWidth=$(document).width();
+
+  $('#verify-tb').on('click','#previe',function(){
+    $('.shelter').css({
+            height:pageHeight,
+            width:pageWidth,
+            display:'block'
+         });
+    $('#previess').css('display','flex');
+//关闭操作
+$('#close').click(function(){
+  $('#previess').css('display','none');
+  $('.shelter').css({'display':'none'});
+});
+//文章预览
+    const id= $(this).attr('index');
+    $.ajax({
+      url:'/admins/verify-pre',
+      data:{id:id},
+      success:function(res){
+        $('#previess span')[0].innerHTML=res.title
+        $('#previess article')[0].innerHTML=res.content
+        $('#previess p')[0].innerHTML=res.publishDate
+        $('#previess img').attr('src',res.cover)
+
+      }
+    });  
+  });
+//文章修改
+  $('#verify-tb').on('click','#edt',function(){
+   window.open('/admins/article-add?id='+$(this).attr('index'),'_blank');
+  });
+//文章删除
+$('#verify-tb').on('click','#delet',function(){
+   let flag=confirm("确认删除吗？");
+   if(flag==true){
+   $.ajax({
+     url:'/admins/notpass',
+     data:{id:$(this).attr('index')},
+     success:function(res){
+       if(res=='bingo'){
+         alert('成功删除');
+         location.reload();
+       }else{
+         alert('失败')
+       }       
+     }
+   });
+  }}
+  );
+//通过验证
+$('#verify-tb').on('click','#pass',function(){
+  $.ajax({
+     url:'/admins/pass',
+     data:{id:$(this).attr('index')},
+     success:function(res){
+       if(res=='bingo'){
+         alert('成功发布');
+         location.reload();
+       }else{
+         alert('失败');
+       }       
+     }
+   });
+});
+
+
+});
+
+
+
+    </script>
+</body>
+</html>

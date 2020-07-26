@@ -1,0 +1,10 @@
+{
+    "title":"后台管理系统---开发模式",
+    "db":{
+        "user":"blog",
+        "pwd":"blog",
+        "host":"localhost",
+        "port":"27017",
+        "name":"blog"
+    }
+}

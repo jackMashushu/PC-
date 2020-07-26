@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/css/user.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
+    <title>生成排行榜</title>
+</head>
+<body>
+    {{include './common/header.art'}}
+            <div class="content-list">              
+                <button type="button">生成当前排行榜信息</button>
+                 <span id="gouzi"></span>                                               
+            </div>
+    </div>
+    <script src="/jquery/jquery-3.4.1.min.js"></script>
+    <script>
+      $('.content-list>button').click(function(){
+        $(window).ajaxSend(function(){
+             $('#gouzi').text('正在生成，请稍后…………') ;  
+            })   
+        $(window).ajaxComplete(function(){
+             $('#gouzi').text('生成成功，请不要短时间反复生成！') ;
+            })
+
+        $.ajax({
+          url:'/admins/rankUpdate',
+          type:'get',
+          success:function(res){
+            console.log(res)
+          }
+        })
+      })
+       
+
+    </script>
+</body>
+</html>

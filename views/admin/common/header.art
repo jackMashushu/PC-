@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="header">
+        <div class="header-title"><p class="header-title-p">简易后台/POORCMS</p></div>
+        <div class="header-list">
+            <ul class="fun-table">                   
+                <li class=" {{currentLink=='userEdit'?'active':''}}"><i class="fa fa-book" aria-hidden="true"></i>  &nbsp;&nbsp;
+                    <a class="alis" href="/admins/userEdit">欢迎页</a></li>
+                <li class=" {{currentLink=='verify'?'active':''}}"><i class="fa fa-heart" aria-hidden="true"></i>  &nbsp;&nbsp;
+                    <a class="alis" href="/admins/verify">文章审核发布</a></li>
+                <li class=" {{currentLink=='contentMan'?'active':''}}"><i class="fa fa-heart" aria-hidden="true"></i>  &nbsp;&nbsp;
+                    <a class="alis" href="/admins/contentMan">新文章发布</a></li>
+                <li class=" {{currentLink=='userMannage'?'active':''}}"><i class="fa fa-cog" aria-hidden="true"></i> &nbsp;&nbsp;
+                    <a class="alis" href="/admins/userMannage">用户增删改查</a></li>
+                <li class=" {{currentLink=='articleMan'?'active':''}}"><i class="fa fa-table" aria-hidden="true"></i>  &nbsp;&nbsp;
+                    <a class="alis" href="/admins/articleMan">文章增删改查</a></li>
+                <li class=" {{currentLink=='static'?'active':''}}"><i class="fa fa-th-list" aria-hidden="true"></i>  &nbsp;&nbsp;
+                    <a class="alis" href="/admins/static">静态资源展示</a></li>
+                <li class=" {{currentLink=='commentMan'?'active':''}}"><i class="fa fa-check-square" aria-hidden="true"></i>  &nbsp;&nbsp;
+                    <a class="alis" href="/admins/commentMan">评论内容管理</a></li>
+                <li class=" {{currentLink=='rankUp'?'active':''}}"><i class="fa fa-align-center" aria-hidden="true"></i>  &nbsp;&nbsp;
+                    <a class="alis" href="/admins/rankUp">排行榜生成</a></li>
+                <li class=" {{currentLink=='friend'?'active':''}}"><i class="fa fa-share-alt" aria-hidden="true"></i>  &nbsp;&nbsp;
+                    <a class="alis" href="/admins/friend">友情链接管理</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-header">           
+            <a href="/admins/logout">退出</a><a href="">{{userInfo.username}}</a><img src="{{userInfo.head}}" alt="" srcset="" class="head-sculpture">
+            
+            <div class="blank"></div>
+        </div>

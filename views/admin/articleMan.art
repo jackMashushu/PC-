@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/css/user.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
+    <title>文章列表</title>
+</head>
+<body>
+    {{include './common/header.art'}}
+            <div class="content-list">
+                <div class="container-list">
+                    <div class="content-list-header">
+                        <h3>文章列表</h3>
+                        <h6>
+                            <a href="/admins/contentMan" class="btn">发新文章</a>
+                        </h6>
+                    </div>
+                    
+                    <table class="tb" width="90%"  border="1" id="article-list">
+                        
+                    </table>
+                    <div class="pigination-article" id="pagi">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="/js/pagination.js"></script>
+<script src="/jquery/jquery-3.4.1.min.js"></script>
+<script>
+    $.ajax({
+        url:'/admins/article-list',
+        data:{page:1},
+        type:'get',
+        success:function(result){
+            const pageIndex=new Pagination('#' + 'pagi', {
+                total:result.total,
+                pagesize:12,
+                pageChange:function(num){
+                      $.ajax({
+                          url:'/admins/article-list',
+                          type:'get',
+                          data:{page:num},
+                          success:function(res){
+                              
+                               var headStr=`<tr class="th">
+                                               <td>文章ID</td>
+                                               <td>标题</td>
+                                               <td>发布时间</td>
+                                               <td>作者</td>
+                                               <td>操作</td>
+                                            </tr>`
+                                var maxStr='';
+                                var str='';
+                            $.each(res.result,function(index,items){
+                                //判断作者是否存在，不存在则替换
+                              if(items.author==null){items.author={};items.author.username='丢失'};
+                              var publishDate=items.publishDate.split('T')[0];//时间格式化
+                                str+=`<tr>
+                                          <td>${items._id}</td>
+                                          <td>${items.title}</td>
+                                          <td>${publishDate}</td>
+                                          <td>${items.author.username}</td>
+                                          <td class="btn">
+                                              <a href="/admins/delet-article?id=${items._id}" class="a1"><i class="fa fa-ban" aria-hidden="true"></i></i></a>
+                                              <a href="/admins/article-add?id=${items._id}" class="a2"><i class="fa fa-align-right" aria-hidden="true"></i></a>
+                                          </td>
+                                      </tr>`
+                            });
+                            maxStr=headStr+str;
+                            $('#article-list')[0].innerHTML=maxStr;
+                          }
+                      })
+                }
+            });
+            pageIndex.init();
+        }
+    });
+</script>
+</body>
+</html>

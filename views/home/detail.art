@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{article.title}}</title>
+    <link rel="stylesheet" href="/home/css/list-style.css">
+</head>
+<body>
+    <div class="nav-box">
+        <header >
+            <div class="logo"><img class="logo-img" src="./images/logos/main-logo.gif" ></div>
+            <div class="search-box">
+                <input type="text" name="" class="search-txt" placeholder="输入关键字……">
+                <button class="icon"></button>
+           </div>
+            <ul class="title-nav">
+                <li><a href="/home/index" target="blank">首页</a></li>
+                <li><a href="#" target="blank">文章</a></li>
+                <li><a href="#" target="blank">分享</a></li>
+                <li id="login-door"><a href="../admins/login" target="blank">登录</a></li>
+                <li><a href="#" target="blank">留言</a></li>
+                <li ><a href="#" class="last-nav" target="blank">更多 &dtrif;</a>
+                    <ul class="dropdown">
+                        <li><a href="#">精选诗歌</a></li>
+                        <li><a href="#">经典文学</a></li>
+                        <li><a href="#">发布文章</a></li>
+                        <li><a href="#">关于</a></li>
+                      </ul>
+                </li>
+            </ul>
+        </header>
+    </div>
+    <div class="container">
+        <!-- 左边盒子 -->
+        <div class="content-left-max " id="left-max-box">
+            <header>
+                <span>当前位置:</span>
+                <a href="/home/index" target="_blank" > <img src="./images/icon/home.png" alt=""> 首页</a>>
+                <a href="http://" target="_blank" >原创专区</a>>
+                <a href="http://" target="_blank" class="last-path"><P>{{article.title}}</P></a>
+                <div class="article-tittle-btn">
+                    <div>
+                        <img src="./images/icon/share.png" id="share-btn" alt="分享">
+                        <div class="decribe">分享</div>
+                    </div>
+                    <div>
+                        <img src="./images/icon/shoucang.png" id="collect-btn" alt="收藏">
+                        <div class="decribe">收藏</div>
+                    </div>
+                    <div>
+                        <img src="./images/icon/warning.png" id="warning-btn" alt="">
+                        <div class="decribe">举报</div>
+                    </div>
+                    <div>
+                        <img src="./images/icon/pifu.png" id="color-btn" alt="">
+                        <div class="decribe">护眼</div>
+                    </div>
+                    <div>
+                        <img src="./images/icon/kuozhan.png" id="extend-btn" alt="">
+                        <div class="decribe">变粗</div>
+                    </div>
+                    <img src="./images/icon/leftkuozhan.png" id="left-extend-btn" alt="">
+                </div>
+            </header>
+            <section class="article-area"> 
+                <h1>{{article.title}}</h1>
+                <div class="many-messages">
+                    <span>{{dateFormat(article.publishDate,'yyyy-mm-dd')}}</span>/
+                    <span>{{article.author.username}}</span>/
+                    <span>32次阅读</span>/
+                    <span>123个评论</span>
+                </div>
+                <article>
+                  <img src="{{article.cover}}" alt="">
+                  {{@article.content}}
+                  
+                </article>
+                <div class="praise-box">
+                    <a href="#" class="praise"><img src="./images/icon/praise.png" > <span>22</span></a>
+                    <a href="" class="pay-box"><img src="./images/icon/pay.png" ><span>3</span></a>
+                    <a href="" class="poor"><img src="./images/icon/outu.png" ><span>1233123</span></a>
+                </div>
+                <div class="next-concent">
+                    <a href=""><span>上一篇：</span><p>马列毛主席语录特别精选版本</p></a>
+                    <a href="" style="margin-left: 70px;">他的其它文章</a>
+                    <a href=""><span>下一篇：</span><p>姚文元评新编历史剧海瑞罢官</p></a>
+                </div>
+            </section>
+            <div class="related-recomend">
+                <h5>相关推荐</h5>
+                <div class="article-list">
+                    <a href=""><img src="./images/article-img/model.jpg" alt=""><span>共产主义宣言的朗诵技巧与背诵指南精选</span></a>
+                    <a href=""><img src="./images/show-pic/bot1.gif" alt=""><span>忙碌是我精神世界的长途跋涉</span></a>
+                    <a href=""><img src="./images/show-pic/bot2.jpg" alt=""><span>是什么原因导致请勿打扰的脱口而</span></a>
+                    <a href=""><img src="./images/show-pic/bot3.jpg" alt=""><span>天地不仁以万物为刍狗，圣人不仁，以百姓为刍狗</span></a>
+                    <a href=""><img src="./images/show-pic/bot4.jpg" alt=""><span>冰雪奇缘2的画面越加精细但故事却越加乏味</span></a>
+                    <a href=""><img src="./images/show-pic/bot5.jpg" alt=""><span>如果故宫的猫是野猫，那么野字更显弥足珍贵</span></a>
+                    
+                </div>
+            </div>
+
+            <div class="related-comments">
+                <h5>发表评论</h5>
+                <form class="text-collect" action="/home/comment" method="post">
+                    <div class="emoj">立即回复：
+                        <img id="normal-com" src="./images/icon/text-normal.png" alt="">
+                        <img src="./images/icon/praise.png"  id="praise-com">
+                        <img src="./images/icon/text-good.png" id="gooda-com">
+                        <img src="./images/icon/come-on.png" id="come-on-com">
+                        <img src="./images/icon/love.png" id="my-love-com">
+                    </div>                   
+                    {{if userInfo}}
+                    <textarea name="content" id="textarea-ele" cols="80" rows="6" placeholder="请发表您的高论……" ></textarea><br>
+                    <input type="hidden" name="userId" value="{{@userInfo._id}}">
+                    <input type="hidden" name="atcId" value="{{@article._id}}">
+                    <button type="submit">提交</button>
+                    
+                    {{else}}
+                    <textarea name="" id="textarea-ele" cols="80" rows="6" placeholder="请先登录再评论……" disabled        name="content"></textarea><br>
+                    <input type="hidden" name="atcId" value="{{@article._id}}">
+                    <a id="bottom-login">登录</a>
+                    {{/if}}
+                    
+                  
+                </form>
+            </div>
+
+            <div class="comments-list">
+                <h5>评论列表</h5>
+                <span>统计：本文共有1232人参与，留下421条评论。</span>
+                <div class="com-list-all">
+                    <ul>
+                        {{each comments}}
+                        <li>
+                            <div>
+                            <img src="./images/head-sculpture/cunfu.jpg" alt="">
+                            <span>{{$value.userId.username}} 认为：</span>
+                            <p>{{dateFormat($value.time,'yyyy-mm-dd')}}</p>
+                            </div>
+                            <p>
+                                {{$value.content}}
+                            </p>
+                            <div class="common-btn">
+                            <button class="replay-com">回复</button>
+                            <button class="delet-com">删除</button>
+                            </div>
+                        </li>
+                        {{/each}}
+                        <li>
+                            <div>
+                                <img src="./images/head-sculpture/cat-ear.jpg" alt="">
+                                <span>诸葛村夫 认为：</span>
+                                <p>2020-2-13</p>
+                                </div>
+                                <p>
+                                    很害怕一个人独处，因为静下来我就会胡思乱想，把自己逼得疯了似的，多么希望可以找到个可以倾诉的人，听我发泄一通，至少可以不用自己一个人承担得那么累。可是，没有。原来朋友很多的我，这才发现找不到一个人来帮我。这事发生得太突然，我没有一点心理准备。摆在面前的是未卜的路途。本来明天过了就该放五一假的，可我没有感觉到一丝假日来临的气氛，相反添了些许负担（因为这个五一不放假，，，不放假，，，不放假）。
+                                </p>
+                                <div class="common-btn">
+                                    <button class="replay-com">回复</button>
+                                    <button class="delet-com">删除</button>
+                                </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./images/head-sculpture/cat.jpg" alt="">
+                                <span>诸葛村夫 认为：</span>
+                                <p>2020-2-13</p>
+                                </div>
+                                <p>
+                                    你是MM还是GG，MM的话加我微信VXzhugecunfu，加完先发你的自拍照，衣服不要穿太多，该展示的地方就大胆展示，不要遮遮掩掩，如果不能令我当场满意，我定不会放过你！
+                                </p>
+                                <div class="common-btn">
+                                    <button class="replay-com">回复</button>
+                                    <button class="delet-com">删除</button>
+                                </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./images/head-sculpture/lang.jpg" alt="">
+                                <span>诸葛村夫 认为：</span>
+                                <p>2020-2-13</p>
+                                </div>
+                                <p>
+                                    你是MM还是GG，MM的话加我微信VXzhugecunfu，加完先发你的自拍照，衣服不要穿太多，该展示的地方就大胆展示，不要遮遮掩掩，如果不能令我当场满意，我定不会放过你！
+                                </p>
+                                <div class="common-btn">
+                                    <button class="replay-com">回复</button>
+                                    <button class="delet-com">删除</button>
+                                </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./images/head-sculpture/xun.jpg" alt="">
+                                <span>诸葛村夫 认为：</span>
+                                <p>2020-2-13</p>
+                                </div>
+                                <p>
+                                    你是MM还是GG，MM的话加我微信VXzhugecunfu，加完先发你的自拍照，衣服不要穿太多，该展示的地方就大胆展示，不要遮遮掩掩，如果不能令我当场满意，我定不会放过你！
+                                </p>
+                                <div class="common-btn">
+                                    <button class="replay-com">回复</button>
+                                    <button class="delet-com">删除</button>
+                                </div>
+                        </li>
+                    </ul>
+                </div>
+               
+            </div>
+            
+        </div>
+
+
+        <!-- 右边盒子 -->
+        <div class="content-right-max">
+            <div class="hot-label">
+                <h5> <img src="./images/icon/label.png" alt=""> 网站标签</h5>
+                <div>
+                       <a href="#" target="blank">经典文章</a>
+                       <a href="#" target="blank">初中作文</a>
+                       <a href="#" target="blank">满分作文</a>
+                       <a href="#" target="blank">童话</a>
+                       <a href="#" target="blank">原创作品</a>
+                       <a href="#" target="blank">热点新闻</a>
+                       <a href="#" target="blank">儿童文学</a>
+                       <a href="#" target="blank">javascript</a>
+                       <a href="#" target="blank">名人名言</a>
+                       <a href="#" target="blank">小说</a>
+                       <a href="#" target="blank">Vue.JS</a>
+                       <a href="#" target="blank">时事政治</a>
+                       <a href="#" target="blank">中外文学</a>
+                       <a href="#" target="blank">古代文学</a>
+                       <a href="#" target="blank">node.js</a>
+                       <a href="#" target="blank">古诗</a>
+                       <a href="#" target="blank">爱情</a>
+                       <a href="#" target="blank">HTML5</a>
+                       <a href="#" target="blank">CSS3</a>
+                       <a href="#" target="blank">奋斗</a>                   
+                </div>
+
+            </div>
+
+            <div class="poem-sing">
+                <h5> <img src="./images/icon/sing.png" alt=""> 诗歌朗诵</h5>
+                <div class="myscroll">
+                    <ul>
+                        <li><a href="#">豆蔻梢头春色浅。新试纱衣，拂袖东风软。</a></li>
+                        <li><a href="#">拢鬓步摇青玉碾。缺样花枝，叶叶蜂儿颤。</a></li>
+                        <li><a href="#">林断山明竹隐墙。乱蝉衰草小池塘。</a></li>
+                        <li><a href="#">画毂雕鞍狭路逢，一声肠断绣帘中。</a></li>
+                        <li><a href="#">三山怀谢脁，水澹望长安。</a></li>
+                        <li><a href="#">芜没河阳县，秋江正北看。</a></li>
+                        <li><a href="#">旧游轻别。忍重看、锁香金箧。凄凉清夜簟席。</a></li>
+                        <li><a href="#">上帝甚蹈，无自瘵焉。俾予靖之，后予迈焉。</a></li>
+                        <li><a href="#">陌上风光浓处。第一寒梅先吐。待得春来也</a></li>
+                        <li><a href="#">红丝穿露珠帘冷，百尺哑哑下纤绠。</a></li>
+                        <li><a href="#">锦叠空床委堕红，飔飔扫尾双金凤。</a></li>
+                        <li><a href="#">蜂喧蝶驻俱悠扬，柳拂赤阑纤草长。</a></li>
+                        <li><a href="#">觉后梨花委平绿，春风和雨吹池塘。</a></li>
+                        <li><a href="#">寻寻觅觅，冷冷清清，凄凄惨惨戚戚。</a></li>
+                        <li><a href="#">满地黄花堆积，憔悴损，如今有谁堪摘？</a></li>
+                        <li><a href="#">守着窗儿，独自怎生得黑！梧桐更兼细雨，到黄昏</a></li>
+                        <li><a href="#">这次第，怎一个愁字了得！</a></li>
+                    </ul>
+                </div>
+
+            </div>
+           
+        </div>
+
+    </div>
+        <!-- 页脚部分 -->
+    <div class="footer-container">
+   
+        <div class="footer-left">
+           <span>友情链接</span>
+           <div class="friendship">         
+             <a href="">中国共青团</a>
+             <a href="">中国摄影协会</a>
+             <a href="">程序员联盟</a>
+             <a href="">新东方厨师</a>
+             <a href="">山东蓝翔</a>
+             <a href="">六小龄童电影</a>
+             <a href="">咪咕音乐</a>
+           </div>
+        </div>
+    
+        <div class="footer-mid">
+          <div><a href="">百度地图</a><a href="">文章归档</a><a href="">转载申请</a><a href="">友链申请</a></div>
+          <a href="">陕西公安备 324234324-1</a><p>Copyright ©2020 叶锅锅 Corporation, All Rights Reserved</p>
+          <p>转载内容版权归作者及来源网站所有，本站样式设计及原创文章未经许可禁止套用和转载，联系：h779132341@qq.com</p>
+    
+        </div>
+    
+        <div class="footer-right">
+          <section>
+            <img src="./images/QRcode/weixin.jpg" > 
+            <span>我的微信</span>
+           </section>
+          <section>
+            <img src="./images/QRcode/alipay.gif" >
+           <span>微信公众号</span>        
+          </section>
+        </div>
+    </div>
+
+
+    <!-- 遮罩层 -->
+<div class="shelter"></div>
+<!-- 登录弹出层 -->
+<div class="login-reg">
+  <form class="login-box">
+    <img src="/home/images/icon/close.png" class="img-close">
+      <h3>普通用户登录</h3>
+      <input type="text" name="username" id="log-username" placeholder="请输入账号……">
+      <input type="password" name="username" id="log-password" placeholder="请输入密码……">
+      <button type="button" class="login-btn">登录</button>
+      <span>现在还没有账号？</span>
+      <button type="button" class="reg-button">立即注册</button>
+      <a href="/admins/login">管理员登录点这里</a>
+  </form>
+</div>
+<!-- 注册弹出层 -->
+<div class="register-box">
+  <form class="register-form">
+    <img src="/home/images/icon/close.png" class="img-reg-close">
+      <h3>普通用户注册</h3>
+      <input type="text" name="username" id="log-username" placeholder="请输入账号">
+      <input type="password" name="username" id="log-password" placeholder="请输入密码">
+      <input type="password" name="username" id="log-password" placeholder="再次输入密码">
+      <input type="password" name="nickname" id="log-password" placeholder="请输入昵称">
+      <span class="warning-reg">&nbsp;</span>
+      <button type="button" class="login-btn">注册</button>
+      <span>已经有账号了？</span>
+      <button type="button" class="reg-button">立即登录</button>
+      <a href="/admins/login">管理员登录点这里</a>
+  </form>
+</div>
+
+
+<script src="/home/js/jquery-3.4.1.min.js"></script>
+<script>
+      // 文章页顶部功能
+  $('#color-btn').click(function(){
+    $('.article-area').toggleClass('active');
+});
+$('#extend-btn').click(function(){
+ $(this).css('display','none');
+ $('#left-extend-btn').css('display','inline-block');
+ $('.content-right-max').css('display','none');
+ $('#left-max-box').css('width','1300px');
+});
+$('#left-extend-btn').click(function(){
+    $('#extend-btn').css('display','inline-block');
+    $(this).css('display','none');
+    $('#left-max-box').css('width','900px');
+    $('.content-right-max').css('display','block');
+   
+});
+$('#warning-btn').click(function(){
+    const flag=confirm('文章存在问题？是否举报该文章？');
+    if(flag){
+        alert('举报成功！请待管理员反馈，谢谢！');
+    }      
+});
+$('#collect-btn').click(function(){
+    alert('后续设置收藏功能');
+});
+
+$('.article-tittle-btn>div').hover(function(){
+    $(this).find('div').css('display','block');
+},function(){
+    $(this).find('div').css('display','none');
+})
+
+// 右侧盒子固定
+$(document).scroll(function(){
+    $('.content-right-max').css('top',$(document).scrollTop());
+});
+
+
+//随机标签的颜色
+const setColor=document.querySelectorAll('.hot-label a');
+setColor.forEach(function(item,index){
+      item.style.color=`rgb(${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)})`;
+});
+setColor.forEach(function(item,index){
+    item.addEventListener('mouseover',function(){
+        this.style.backgroundColor=`rgba(${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)},0.7)`;
+        this.style.color='aliceblue';
+    })
+    //   item.style.color=`rgb(${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)})`;
+});
+
+
+
+
+
+
+//    文章快速评论
+ $('#normal-com').click(function(){
+ $('#textarea-ele').text('我觉得一般！希望你能意识到自己的问题并多改几遍，否则我会很失望！');
+});
+$('#praise-com').click(function(){
+ $('#textarea-ele').text('非常喜欢你的文章，我要给你一个么么哒！');
+});
+$('#gooda-com').click(function(){
+ $('#textarea-ele').text('你的文章如行云流水,一气呵成,读后如醍醐灌顶,令我茅塞顿开。');
+});
+$('#come-on-com').click(function(){
+ $('#textarea-ele').text('文章不错，但和我还有些许差距，继续加油吧！你可以赶上我的步伐！');
+});
+$('#my-love-com').click(function(){
+ $('#textarea-ele').text('我们应该坚持党的领导，坚持解放思想、实事求是，坚持以人为本，坚持正确处理改革发展稳定关系。好好检讨自己的不足，或许有一天，你有机会让我眼前一亮。');
+});
+//    文章评论按钮
+ $('.com-list-all li').hover(function(){
+     $(this).find('.replay-com').css('display','block');
+     $(this).find('.delet-com').css('display','block');
+ },function(){
+     $(this).find('.delet-com').css('display','none');
+     $(this).find('.replay-com').css('display','none');
+ });
+
+
+//  古诗滚动效果
+// JavaScript Document
+(function($){
+	$.fn.myScroll = function(options){
+	//默认配置
+	var defaults = {
+		speed:40,  //滚动速度,值越大速度越慢
+		rowHeight:24 //每行的高度
+	};
+	
+	var opts = $.extend({}, defaults, options),intId = [];
+	
+	function marquee(obj, step){
+	
+		obj.find("ul").animate({
+			marginTop: '-=1'
+		},0,function(){
+				var s = Math.abs(parseInt($(this).css("margin-top")));
+				if(s >= step){
+					$(this).find("li").slice(0, 1).appendTo($(this));
+					$(this).css("margin-top", 0);
+				}
+			});
+		}
+		
+		this.each(function(i){
+			var sh = opts["rowHeight"],speed = opts["speed"],_this = $(this);
+			intId[i] = setInterval(function(){
+				if(_this.find("ul").height()<=_this.height()){
+					clearInterval(intId[i]);
+				}else{
+					marquee(_this, sh);
+				}
+			}, speed);
+
+			_this.hover(function(){
+				clearInterval(intId[i]);
+			},function(){
+				intId[i] = setInterval(function(){
+					if(_this.find("ul").height()<=_this.height()){
+						clearInterval(intId[i]);
+					}else{
+						marquee(_this, sh);
+					}
+				}, speed);
+			});
+		
+		});
+
+	}
+
+})(jQuery);
+// 古诗滚动启动器
+$(function(){
+	$('.myscroll').myScroll({
+		speed: 60,  
+		rowHeight: 26 
+	});
+});
+
+
+
+const pageHeight=$(document).height();
+const pageWidth=$(document).width();
+
+// 登录盒子及遮罩层
+$('#login-door').click(function(){
+$('.shelter').css({
+  height:pageHeight,
+  width:pageWidth,
+  display:'block'
+});
+$('.login-reg').toggleClass('active');
+return false;
+});
+
+$('.img-close').click(function(){
+  $('.login-reg').toggleClass('active');
+  $('.shelter').css('display','none');
+});
+$('.login-btn').click(function(){
+  $(this).toggleClass('active');
+});
+// 注册相关组件
+$('.reg-button').click(function(){
+  $('.login-reg').toggleClass('active');
+  $('.register-box').toggleClass('active')
+});
+$('.img-reg-close').click(function(){
+  $('.shelter').css('display','none');
+  $('.register-box').toggleClass('active');
+
+});
+
+$('#bottom-login').click(function(){
+  $('.shelter').css({
+  height:pageHeight,
+  width:pageWidth,
+  display:'block'
+  });
+  $('.login-reg').toggleClass('active');
+  return false;
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千年文章网</title>
+    <link rel="stylesheet" href="/home/css/style.css">
+</head>
+<body>
+<div>
+    <header >
+        <div class="logo"><img class="logo-img" src="./images/logos/main-logo.gif" ></div>
+        <ul class="title-nav">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">关于</a></li>
+            <li><a href="#">大全</a></li>
+            <li class="login-i"><img src="./images/icon/login.png" ><a id="login-door" target="blank">登录</a></li>
+        </ul>
+    </header>
+</div>
+<div class="second-container">
+     <div class="content-header">
+        <div class="left-list">
+          <div class="list-box">
+              <h3>古代文学</h3>
+              <a href="">秦汉风流 <img src="./images/icon/right.gif" ></a>
+              <a href="">魏晋南北<img src="./images/icon/right.gif" ></a>
+              <a href="">唐宋元明<img src="./images/icon/right.gif" ></a>
+              <a href="">小清近现<img src="./images/icon/right.gif" ></a>
+          </div>
+          <hr />
+          <div class="list-box">
+            <h3>古代文学</h3>
+            <a href="">秦汉风流<img src="./images/icon/right.gif" ></a>
+            <a href="">魏晋南北<img src="./images/icon/right.gif" ></a>
+            <a href="">唐宋元明<img src="./images/icon/right.gif" ></a>
+            <a href="">小清近现<img src="./images/icon/right.gif" ></a>
+        </div>
+        <hr />
+        <div class="list-box">
+            <h3>古代文学</h3>
+            <a href="">秦汉风流<img src="./images/icon/right.gif" ></a>
+            <a href="">魏晋南北<img src="./images/icon/right.gif" ></a>
+            <a href="">唐宋元明<img src="./images/icon/right.gif" ></a>
+            <a href="">小清近现<img src="./images/icon/right.gif" ></a>
+        </div>             
+        </div>
+        <!-- 轮播 -->
+        <div class="glide">
+            <div class="banner" id="banner">
+                <ul class="imgBox clearFix" >
+                    <li ><img src="./images/glide/1.jpg" ></li>
+                    <li ><img src="./images/glide/2.jpg" ></li>
+                    <li ><img src="./images/glide/3.jpg" ></li>
+                </ul>
+                <ol class="pointBox">
+                </ol>
+                <div class="leftright">
+                    <span class="left">&lt;</span>
+                    <span class="right">&gt;</span>
+                </div>
+            </div>
+            <!-- 轮播 -->
+           <div class="tools-box">
+            <div class="tools-list">
+                <span>实用工具：</span>
+                <a href="" class="icon-btn">
+                  <img src="./images/icon/tool-change.png" alt="">
+                  <!-- <div class="decribe">简繁转换</div> -->
+                </a>
+                <a href="" class="icon-btn">
+                  <img src="./images/icon/tools-bagua.png" alt="">
+                  <!-- <div class="decribe">算命测字</div> -->
+                </a>
+                <a href="" class="icon-btn icon-btn-set3">
+                  <img src="./images/icon/upload.png" alt="">
+                  <!-- <div class="decribe">上传文章</div> -->
+                </a>
+                <a href="" class="icon-btn icon-btn-set4">
+                  <img src="./images/icon/star.png" alt="">
+                  <!-- <div class="decribe">收藏本站</div> -->
+                </a>
+                <a href="" class="icon-btn icon-btn-set5">
+                  <img src="./images/icon/tool-book.png" alt="">
+                  <!-- <div class="decribe">在线词典</div> -->
+                </a>
+                <a href="/home/column" class="icon-btn icon-btn-set6">
+                  <img src="./images/icon/homesearch.png" alt="">
+                  <!-- <div class="decribe">全站搜索</div> -->
+                </a>
+                <a href="#" class="icon-txt">获取更多......</a>
+            </div>
+           </div>
+        </div>
+        <div class="message">           
+                <ul class="title-box">
+                    <li class="active" >新文章</li>
+                    <li >新公告</li>           
+                </ul>
+                <ol class="mes-container">
+                    <li class="active">
+                        <ul class="show-article">
+                            <li class="li-list">
+                               <div class="article-card" id="defaul-card-show"> 
+                                   <img src="./images/list-head/model2.gif" alt="" srcset="">
+                                   <div class="card-detail">    
+                                       <a href="">聊斋志异</a>
+                                       <a href="">蒲松龄</a>
+                                    </div>
+                                </div>
+                                <div class="article-show-sim" id="defaul-sim-show">
+                                    <span>1</span>
+                                    <a href="#">魔道祖师的速度</a>
+                                    <p class="show-list-date">12-32</p>
+                                </div>              
+                            </li>
+
+                            
+                           <li class="li-list">
+                               <div class="article-card">
+                                  <img src="./images/list-head/model2.gif" alt="" srcset="">
+                                  <div class="card-detail">    
+                                    <a href="">曹植洛神赋</a>
+                                    <a href="">曹植哥哥</a>                                   
+                                  </div>
+                                </div>
+                                <div class="article-show-sim">
+                                  <span>2</span>
+                                  <a href="#">洛神赋曹植和曹丕</a>
+                                  <p class="show-list-date">12-32</p>
+                                </div>              
+                           </li>
+
+                           <li class="li-list">
+                            <div class="article-card">
+                                <img src="./images/list-head/model2.gif" alt="" srcset="">
+                                <div class="card-detail">    
+                                  <a href="">曹植洛神赋</a>
+                                  <a href="">曹植哥哥</a>
+                                </div>
+                              </div>
+                              <div class="article-show-sim">
+                                <span>3</span>
+                                <a href="#">洛神赋曹植和曹丕</a>
+                                <p class="show-list-date">12-32</p>
+                              </div>              
+                           </li>
+                           <li class="li-list">
+                            <div class="article-card">
+                                <!-- <span>4</span> -->
+                                <img src="./images/list-head/model2.gif" alt="" srcset="">
+                                <div class="card-detail">    
+                                  <a href="">曹植洛神赋</a>
+                                  <a href="">曹植哥哥</a>
+                                </div>
+                              </div>
+                              <div class="article-show-sim">
+                                <span>4</span>
+                                <a href="#">洛神赋曹植和曹丕</a>
+                                <p class="show-list-date">12-32</p>
+                              </div>              
+                           </li>
+                           <li class="li-list">
+                            <div class="article-card">
+                                <img src="./images/list-head/model2.gif" alt="" srcset="">
+                                <div class="card-detail">    
+                                  <a href="">曹植洛神赋</a>
+                                  <a href="">曹植哥哥</a>
+                                </div>
+                              </div>
+                              <div class="article-show-sim">
+                                <span>5</span>
+                                <a href="#">洛神赋曹植和曹丕</a>
+                                <p class="show-list-date">12-32</p>
+                              </div>              
+                           </li>
+                          
+                           <li class="li-list">
+                            <div class="article-card">
+                                <img src="./images/list-head/model2.gif" alt="" srcset="">
+                                <div class="card-detail">    
+                                  <a href="">诸葛亮出师表</a>
+                                  <a href="">诸葛亮</a>
+                                </div>
+                              </div>
+                              <div class="article-show-sim">
+                                <span>6</span>
+                                <a href="#">诸葛亮出师表大多数</a>
+                                <p class="show-list-date">12-32</p>
+                              </div>              
+                           </li>
+                          
+                        </ul>
+                    </li>
+                    <li >
+                        <div class="news">
+                          <div class="news-index">
+                            <span id="news-index-1">1</span>
+                            <span id="news-index-2">2</span>
+                            <span id="news-index-3">3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span>7</span>
+                          </div>
+                          <div class="news-list">
+                            <a href="#">[主要内容]关于本站的方向和内容</a>
+                            <a href="#">[版权信息]关于本的作品和版权</a>
+                            <a href="#">商务部印发应对新冠肺炎疫情做好稳外贸稳外资促消费工作的通知</a>
+                            <a href="#">钟山部长同匈牙利外交与对外经济部部长西雅尔多通电话</a>
+                            <a href="#">国务院联防联控机制2020年4月9日新闻发布会</a>
+                            <a href="#">中国和柬埔寨举行双边自贸协定第二轮谈判</a>
+                            <a href="#">上周食用农产品价格继续回落 生产资料价格小幅下降</a>
+                            <a href="#" id="news-btn">获取更多……</a> 
+                          </div>                         
+                        </div>
+                    </li>            
+                </ol>         
+        </div>
+   </div>
+</div>
+<div class="article-section">
+  <div class="left-article-show">
+    <div class="orignal">
+        <div class="original-title">
+           <h4>原创专区</h4><span>ORANGENAL</span>
+           <a href="#">了解更多……</a>
+        </div>
+
+        <div class="left-content-flex">
+
+        <div class="left-pic-box">
+          <ul>
+            <li>
+              <a href="#"  class="left-pic-a" target="_blank">
+                <img src="./images/show-pic/wihtecat.gif">
+                <div class="backdrop"></div>
+                <span>野性也是灵性，面向天地，追求灵性</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="left-pic-a" target="_blank">
+                <img src="./images/show-pic/leaves.gif">
+                <div class="backdrop"></div>
+                <span>不被自我精神束缚，自由便存在于任何地方</span>
+              </a>
+            </li>
+          </ul>
+        </div> 
+
+        <div class="left-article-list">
+          <ul class="newslist">
+            <li class="article-first-model"> 
+                <div class="condom">    
+                     <a href="./detail.html" title="当前溢出的骄傲是未来苦果的幼苗" target="_blank"><i>1</i>当前溢出的骄傲是未来苦果的幼苗</a>
+                </div>    
+                <p>骄傲本是个贬义词，而当今社会，它已经逐渐演变为中性词。骄傲可以被理解为自信，也可以被批评为无知。聪明人将骄傲深藏，并转化为自信，愚笨的人将骄傲暴露无遗，过分外溢，成为苦果的幼苗。</p>
+            </li>
+            <li>
+              <div class="condom">  
+                <a href="#" title="忙碌是自由活着的一种底气" target="_blank"> <i>2</i>忙碌是我精神世界的长途跋涉</a> 
+              </div>  
+                <p>自由本质上属于精神层面，对我而言，精神上的空虚是自我束缚感的最直观提现。因此，在广阔的世界漫步不能让我感到没有束缚，而宅居在家，让自己忙碌起来反而让我获得前所未有的自由与充实感。</p>
+           </li>
+            <li> 
+               <div class="condom">             
+                <a href="#" title="是什么原因导致请勿打扰的脱口而" target="_blank"> <i>3</i>是什么原因导致请勿打扰的脱口而出？</a>
+                </div>
+                <p>经过一昼夜的曲折经历，反映出当前社会中人与人之间的种种微妙而复杂的关系，从中可以看出人们相互间多一份理解和爱心是多么重要。 小学老师费祥深爱着妻子丹丹，但两人结婚五年了，却还没有让妻子有一间自己的小巢。</p>
+           </li>
+            <li> 
+                <div class="condom">           
+                <a href="#" title="阿里云的是丢分地哈佛ID绥芬河电弧" target="_blank">  <i>4</i>天地不仁以万物为刍狗，圣人不仁，以百姓为刍狗</a>
+                </div>
+                <p>以万物为刍狗 是说将万物看作刍狗,用时尊荣,用后即弃之如弊屣,顺其荣华至衰败的发展过程。这自然是不讲仁恩了。 狗在古代是普通百姓作祭祀用的牲畜，是低贱的代名词</p>
+           </li>
+            <li> 
+              <div class="condom">              
+                <a href="#" title="冰雪奇缘2的画面越加精细但故事却越加乏味" target="_blank"> <i>5</i>冰雪奇缘2的画面越加精细但故事却越加乏味</a>
+              </div>
+                <p>当Elsa穿着婚纱，骑着骏马和Anna相拥时候，我被伟大的亲(爱❤️)情震撼了，至于男主，怎么看怎么多余。 2.缺点:没有邪魅的王子反派撑起剧情，续集逊色一半。父母之谜这种烂大街梗被美漫玩腻剧情又被套在这部续集上</p>
+           </li>
+           <li> 
+            <div class="condom">              
+               <a href="#" title="" target="_blank"> <i>6</i>如果故宫的猫是野猫，那么野字更显弥足珍贵</a>
+            </div>
+               <p>中国摄影师刘顺儿妞的「故宫猫咪图籍」拍摄了小猫躺在琉璃瓦上、穿梭古砖红墙的画面。据了解，故宫内共养了 181只猫，工作人员会将每只猫记录归档，并为它们绝育。为什么故宫内会有这么多猫呢？</p>
+           </li>
+       </ul>
+     </div>
+     <div class="publish-banner">
+         <div class="publish-picture-front">
+             <img src="./images/show-pic/regict.gif" alt="" srcset="">
+         </div>
+         <div class="publish-picture-back">
+           <span>请选择</span>
+           <a href="#" class="regi">注 册</a>
+           <a href="#" class="login">登 录</a>          
+         </div>
+    </div>
+
+
+    </div>
+
+  </div>
+
+
+    <div class="hot-article">
+        <div class="original-title">
+          <h4>热点文章</h4><span>HOTART</span>
+          <a href="#">了解更多……</a>
+        </div> 
+        <div class="article-long-show">
+          <ul>
+            {{each result.records}}
+            <li class="every-article-index">
+              <img src="{{$value.cover}}" alt="">
+              <div>
+                <a href="/home/article?id={{@$value._id}}" target="_blank" rel="noopener noreferrer">{{$value.title}}</a>
+                <p>摘要：{{@$value.content.replace(/<[^>]+>/g,'').substr(0,180)+'...'}}</p>
+                <span>{{dateFormat($value.publishDate,'yyyy-mm-dd')}}发布@{{$value.author.username}} 阅读2312 评论888</span>
+              </div>
+            </li>
+            {{/each}}
+            
+          </ul>         
+        </div> 
+        <div class="pagination">
+          {{if result.page>1}}
+          <a href="/home/index?page={{result.page-1}}"><</a>
+          {{/if}}
+          {{each result.display}}
+          <a href="/home/index?page={{$value}}" class="{{$value==result.page?'active':''}}">{{$value}}</a>
+          {{/each}}
+          {{if result.page<result.pages}}
+          <a href="/home/index?page={{result.page-0+1}}">></a>
+          {{/if}}
+        </div>
+    </div>
+
+  </div>
+
+<!-- 右侧区域大盒子 -->
+ <div class="right-little-block" id="right-little-block">
+
+
+    <div class="author-rank">
+
+      <div class="original-title">
+        <h4>网站编辑</h4><span>RANK</span>
+        <a href="#" class="sharing-more-btn"><img src="./images/icon/more.png" alt=""></a>
+     </div>
+        <div class="author-flex-box">
+         <div class="order-num">
+               <img src="./images/icon/no1.png" alt="">
+               <img src="./images/icon/no2.png" alt="">
+               <img src="./images/icon/no3.png" alt="">
+               <span>4</span>
+               <span>5</span>
+               <span>6</span>
+         </div>
+
+         <div class="author-list">
+            <ul>
+              <li><img class="head-sculpture" src="./images/head-sculpture/xun.jpg" alt=""><a href="">鲁迅</a><span>100篇</span></li>
+              <li><img class="head-sculpture" src="./images/head-sculpture/cat.jpg" alt=""><a href="">叶锅锅</a><span>55篇</span></li>
+              <li><img class="head-sculpture" src="./images/head-sculpture/cunfu.jpg" alt=""><a href="">诸葛村夫</a><span>43篇</span></li>
+              <li><img class="head-sculpture" src="./images/head-sculpture/lang.jpg" alt=""><a href="">王司徒</a><span>22篇</span></li>
+              <li><img class="head-sculpture" src="./images/head-sculpture/dog.jpg" alt=""><a href="">司马光砸缸</a><span>16篇</span></li>
+              <li><img class="head-sculpture" src="./images/head-sculpture/cat-ear.jpg" alt=""><a href="">吕秀才</a><span>10篇</span></li>
+            </ul>
+         </div>
+
+      </div>
+
+    </div>
+
+    <div class="gdthing-sharing">
+
+            <div class="original-title">
+              <h4>资源共享</h4><span>SHARE</span>
+              <a href="#" class="sharing-more-btn"><img src="./images/icon/more.png" alt=""></a>
+           </div>      
+      
+           <div class="share-flex-box">
+            <div class="share-order-num">
+                  <span>1</span>
+                  <span>2</span>
+                  <span>3</span>
+                  <span>4</span>
+                  <span>5</span>
+                  <span>6</span>
+                  <span>7</span>
+                  <span>8</span>
+                  <span>9</span>
+            </div>
+
+            <div class="share-list">
+               <ul>
+                 <li><a href="">威客网程序源码附带完整安装视频教程</a>
+                  <img src="./images/icon/fire.png" alt="">
+                 </li>
+
+                 <li><a href="">最新PHP版站群全自动泛解析站群程序附6000W关键词</a>
+                  <img src="./images/icon/fire.png" alt="">
+                 </li>
+                 <li><a href="">南方CASS软件 初学入门精通 有声视频教程大全</a>
+                  <img src="./images/icon/fire.png" alt="">
+                 </li>
+                 <li><a href="">百万淘客站群4.0商业破解版下载,淘金点模式 ,泛目录模式</a>
+                  <img src="./images/icon/fire.png" alt="">
+                 </li>
+                 <li><a href="">代理IP提取网站源码,DEDECMS内核,代理自助提取系统</a>
+                  <img src="./images/icon/fire.png" alt="">
+                 </li>
+                 <li><a href="">狮子鱼12.7.0 独立版狮子鱼社区团购小程序</a>
+                  <img src="./images/icon/fire.png" alt="">
+                 </li>
+                 <li><a href="">安卓Android专业变声器Pro v3.0.0会员版</a>
+                  <img src="./images/icon/fire.png" alt="">
+                 </li>
+                 <li><a href="">最新AutoCAD 2021_64绿色精简版</a>
+                  <img src="./images/icon/fire.png" alt="">
+                 </li>
+                 <li><a href="">凹凸社区APP源码蜜桃社区源码</a>
+                  <img src="./images/icon/fire.png" alt="">
+                 </li>
+               </ul>
+            </div>
+
+   </div>
+
+    </div>
+
+
+</div>
+
+</div>
+<!-- 遮罩层 -->
+<div class="shelter"></div>
+<!-- 登录弹出层 -->
+<div class="login-reg">
+  <form class="login-box">
+    <img src="/home/images/icon/close.png" class="img-close">
+      <h3>普通用户登录</h3>
+      <input type="text" name="username" id="log-username" placeholder="请输入账号……">
+      <input type="password" name="username" id="log-password" placeholder="请输入密码……">
+      <button type="button" class="login-btn">登录</button>
+      <span>现在还没有账号？</span>
+      <button type="button" class="reg-button">立即注册</button>
+      <a href="/admins/login">管理员登录点这里</a>
+  </form>
+</div>
+<!-- 注册弹出层 -->
+<div class="register-box">
+  <form class="register-form">
+    <img src="/home/images/icon/close.png" class="img-reg-close">
+      <h3>普通用户注册</h3>
+      <input type="text" name="username" id="log-username" placeholder="请输入账号">
+      <input type="password" name="username" id="log-password" placeholder="请输入密码">
+      <input type="password" name="username" id="log-password" placeholder="再次输入密码">
+      <input type="password" name="nickname" id="log-password" placeholder="请输入昵称">
+      <span class="warning-reg">&nbsp;</span>
+      <button type="button" class="login-btn">注册</button>
+      <span>已经有账号了？</span>
+      <button type="button" class="reg-button">立即登录</button>
+      <a href="/admins/login">管理员登录点这里</a>
+  </form>
+</div>
+
+
+
+<!-- 页脚部分大盒子 -->
+<div class="footer-container">
+   
+    <div class="footer-left">
+       <span>友情链接</span>
+       <div class="friendship">         
+         <a href="">中国共青团</a>
+         <a href="">中国摄影协会</a>
+         <a href="">程序员联盟</a>
+         <a href="">新东方厨师</a>
+         <a href="">山东蓝翔</a>
+         <a href="">六小龄童电影</a>
+         <a href="">咪咕音乐</a>
+       </div>
+    </div>
+
+    <div class="footer-mid">
+      <div><a href="">百度地图</a><a href="">文章归档</a><a href="">转载申请</a><a href="">友链申请</a></div>
+      <a href="">陕西公安备 324234324-1</a><p>Copyright ©2020 叶锅锅 Corporation, All Rights Reserved</p>
+      <p>转载内容版权归作者及来源网站所有，本站样式设计及原创文章未经许可禁止套用和转载，联系：h779132341@qq.com</p>
+
+    </div>
+
+    <div class="footer-right">
+      <section>
+        <img src="./images/QRcode/weixin.jpg" > 
+        <span>我的微信</span>
+       </section>
+      <section>
+        <img src="./images/QRcode/alipay.gif" >
+       <span>微信公众号</span>        
+      </section>
+    </div>
+</div>
+
+<script src="/home/js/jquery-3.4.1.min.js"></script>
+<script src="/home/js/index.js"></script> 
+<script> 
+// 启动器：
+const p1=new Banner("#banner"); 
+const pageHeight=$(document).height();
+const pageWidth=$(document).width();
+
+// 登录盒子及遮罩层
+$('#login-door').click(function(){
+$('.shelter').css({
+  height:pageHeight,
+  width:pageWidth,
+  display:'block'
+});
+$('.login-reg').toggleClass('active');
+});
+
+$('.img-close').click(function(){
+  $('.login-reg').toggleClass('active');
+  $('.shelter').css('display','none');
+});
+$('.login-btn').click(function(){
+  $(this).toggleClass('active');
+});
+// 注册相关组件
+$('.reg-button').click(function(){
+  $('.login-reg').toggleClass('active');
+  $('.register-box').toggleClass('active')
+});
+$('.img-reg-close').click(function(){
+  $('.shelter').css('display','none');
+  $('.register-box').toggleClass('active');
+
+});
+$('.regi').click(function(){
+  $('.register-box').toggleClass('active');
+  $('.shelter').css({
+  height:pageHeight,
+  width:pageWidth,
+  display:'block'
+});
+  return false;
+});
+$('.login').click(function(){
+  $('.shelter').css({
+  height:pageHeight,
+  width:pageWidth,
+  display:'block'
+  });
+  $('.login-reg').toggleClass('active');
+  return false;
+})
+
+// 工具栏js
+// $('.icon-btn-set6').click(function(){
+//   window.location.href='/home/column'
+// })
+
+
+</script>
+</body>
+</html>

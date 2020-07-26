@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .search-box{
+            position: relative;
+            margin: 200px auto;
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            border-radius: 4px;
+            transition: width 0.5s;
+            overflow: hidden;
+        }
+        .search-box.active{
+            width: 400px;
+        }
+        .search-box>.search-txt{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: calc(100% - 90px);
+            height: 60px;
+            border: none;
+            outline: none;
+            font-size: 36px;
+            padding: 0 10px;
+            color: #666;
+        }
+        .icon{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            transition: 0.5s;
+            border-radius: 4px;           
+        }
+        .search-box.active .icon{
+            background-color: #ff355a;
+        }
+        .icon:before{
+             content: '';
+             position: absolute;
+             top: 10px;
+             left: 10px;
+             width: 24px;
+             height: 24px;
+             background: transparent;
+             border: 3px solid #262626;
+             border-radius: 50%;
+             transition: 0.5s;             
+        }
+        .search-box.active .icon:before{
+            content: '';
+             position: absolute;
+             top: 7px;
+             left: 13px;
+             width: 18px;
+             height: 30px;
+             background: transparent;
+             border: none;
+             border-right: 2px solid #fff;
+             border-radius: 0;
+             transition: 0.5s;  
+             transform: rotate(45deg);   
+        }
+        .icon:after{
+             content: '';
+             position: absolute;
+             top: 25px;
+             left: 35px;
+             width: 18px;
+             height: 18px;
+             background: transparent;
+             border-left: 3px solid #262626;
+             border-radius: 0;
+             transform: rotate(-45deg);
+             transition: 0.5s;             
+        }
+        .search-box.active .icon:after{
+            content: '';
+             position: absolute;
+             top: 20px;
+             left: 13px;
+             width: 18px;
+             height: 30px;
+             background: transparent;
+             border: none;
+             border-right: 2px solid #fff;
+             border-radius: 0;
+             transition: 0.5s;  
+             transform: rotate(-45deg);   
+        }
+    </style>
+</head>
+<body>
+    <div class="search-box">
+        <input type="text" name="" class="search-txt" placeholder="输入关键词……">
+       <div class="icon"></div>
+    </div>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script >
+        $(document).ready(()=>{
+            $('.icon').click(()=>{
+                $('.search-box').toggleClass('active');
+            })
+        })
+    </script>
+</body>
+</html>

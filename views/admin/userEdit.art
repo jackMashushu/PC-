@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/css/user.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
+    <title>用户信息管理</title>
+</head>
+<body>
+    {{include './common/header.art'}}
+            <div class="content-list">
+
+            <div class="user-info">
+              <div>
+              <H4>网站概况</H4>
+              <section>
+                <p>文章总数：{{atcCount}}篇</p>
+                <p>注册用户数：{{userCount}}人</p>
+                <p>文章收录数：0篇</p>
+                <p>共收到评论：0条</p>
+              </section>
+              </div>
+
+              <div>
+                <H4>网站浏览量</H4>
+                <section>
+                    <p>浏览总数：0次</p>
+                    <p>今日浏览：0次</p>
+                    <p>蜘蛛到访：0次</p>
+                    <p>敬请期待</p>
+                </section>
+              </div>
+
+              <div>
+                  <H4>我的消息</H4>
+                  <section>
+                    <p>找我的：0条</p>
+                    <p>举报的文章：0篇</p>
+                    <p>友链申请：0个</p>
+                    <p>敬请期待</p>
+                  </section>
+              </div>
+                  
+            </div>
+
+
+                <div class="container-list">
+                    <div class="content-list-header">
+                        <h3>当前登录：{{userID}}</h3>
+                    </div>
+                    <div class="article-edit">                       
+                        <form method="POST" >
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">用户姓名</label>
+                              <input type="text"  name="username" value="{{@userInfo.username}}" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">用户邮箱</label>
+                              <input type="email" name="email" value="{{@userInfo.email}}" id="exampleInputPassword1">
+                            </div>
+                            <div class="form-group">
+                                <label for="qwe">用户密码</label>
+                                <input type="password"  value="{{@userInfo.password}} name="password" id="qwe">
+                              </div>
+                              <div class="form-group">
+                                <label for="qwer">用户身份</label>
+                                <select id="qwer" name="identity" >
+                                    <option value="admin">管理员</option>                                    
+                                    <option value="normal">普通用户</option>
+                                </select>
+                              </div> 
+                              <div class="form-group">
+                                <label for="qwer1">修改头像</label>
+                                <input type="file" name="head" id="qwer1">
+                              </div>                           
+                            <button type="submit" class="btn btn-primary">确认修改</button>
+                          </form>   
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/css/user.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
+    <title>友链更换</title>
+</head>
+<body>
+    {{include './common/header.art'}}
+            <div class="content-list">              
+              <div class="container-list">
+                <div class="content-list-header">
+                    <h3>新增友链：</h3>
+                </div>
+                <form id="form-friend">
+                 <label for="url">完整地址：</label>
+                <input type="text" id="url" placeholder="因包含传输协议……">
+                <label for="keywords">关键词：</label>
+                <input type="text" id="keywords" placeholder="关键词不宜过长……">
+                <label for="describe">关键词：</label>
+                <input type="text" id="describe" placeholder="描述选填……">
+                <button type="button" id="friend-sub">提交</button>
+                </form>
+                <table id="friend-tb">
+
+
+
+                </table>
+            </div>
+
+
+    </div>
+    <script src="/js/pagination.js"></script>
+    <script src="/jquery/jquery-3.4.1.min.js"></script>
+    <script>
+      $('#friend-sub').click(function(){
+        const friUrl=$('#url').val();
+        const keywords=$('#keywords').val();
+        const describes=$('#describe').val();
+        console.log(describes)
+        $.ajax({
+          url:'/admins/friend-set',
+          data:{friUrl:friUrl,keywords:keywords,describes:describes,type:'add'},
+          success:function(res){
+            alert(res);
+            location.reload();
+          }
+        });
+      });
+     $.ajax({
+       url:'/admins/friend-set',
+       data:{type:'get'},
+       success:function(res){
+         let maxStr=` <tr>
+                      <th>关键词</th>
+                      <th>URL</th>
+                      <th>操作</th>
+                    </tr>`
+         let str='';
+         $.each(res,function(index,items){
+            str+=`   <tr>
+                      <td>${items.keywords}</td>
+                      <td>${items.path}</td>
+                      <td id="delet" index="${items._id}">删除</td>
+                    </tr>`
+         })
+         const html=maxStr+str;
+         $('#friend-tb')[0].innerHTML=html;
+
+       }
+     });
+$('#friend-tb').on('click','#delet',function(){
+  $.ajax({
+    url:'/admins/friend-set',
+    data:{id:$(this).attr('index'),type:'delet'},
+    success:function(res){
+      alert(res);
+      location.reload();
+    }
+  })
+})
+
+
+    </script>
+</body>
+</html>

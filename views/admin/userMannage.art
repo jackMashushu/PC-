@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/css/user.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
+    <title>用户管理</title>
+</head>
+
+<body>
+    {{include './common/header.art'}}
+    <div class="content-list" id="bd">
+        <div class="container-list">
+            <div class="content-list-header">
+                <h3>用户列表</h3>
+                <h6>
+                    <a href="/admins/userAdd" class="btn">添加用户</a>
+                </h6>
+            </div>
+
+            <table class="tb" width="90%" border="1" id="table-box">
+            </table>
+            <div class="pigination" id="pagi" style="margin-top: -30px;"></div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="/js/pagination.js"></script>
+    <script src="/jquery/jquery-3.4.1.min.js"></script>
+    <script>
+        // 分页器渲染，使用拼接字符串方法
+        $.ajax({
+            url: '/admins/toltal',
+            type: 'get',
+            data: { page: 1 },
+            success: function (res) {
+                    const pageIndex = new Pagination('#' + 'pagi', {
+                    pagesize: 12,
+                    total: res.total,
+                    pageChange: function (num) {
+                        $.ajax({
+                            url: '/admins/toltal',
+                            type: 'get',
+                            data: 'page=' + num,
+                            success: function (res2) {
+                                var headStr = `<tr class="th" id="removeself">
+                            <td>用户ID</td>
+                            <td>用户名</td>
+                            <td>邮箱</td>
+                            <td>角色</td>
+                            <td>状态</td>
+                            <td>操作</td>
+                        </tr> `
+
+                                var str = '';
+                                $.each(res2.result, function (index, items) {
+                                    str += `                   
+                        <tr>
+                            <td>${items._id}</td>
+                            <td>${items.username}</td>
+                            <td>${items.email}</td>
+                            <td>${items.identity}</td>
+                            <td>${items.situation}</td>
+                            <td class="btn">
+                                <p href="" id-delet="${items._id}" class="a1"><i class="fa fa-ban" aria-hidden="true"></i></i></p>
+                                <a href="/admins/userAdd?id=${items._id}" class="a2"><i class="fa fa-align-right" aria-hidden="true"></i></a>
+                            </td>
+                        </tr>`
+                                });
+                                maxStr = headStr + str;
+                                $('#table-box')[0].innerHTML = maxStr;
+
+
+                                //由于删除用户是个点击事件，所以必须等待表格加在结束才能绑定事件，这里可以
+                                $('.a1').on('click', function () {
+                                    const deletID = $(this).attr('id-delet');
+                                    const flag = confirm('确定要删除这个用户吗？');
+                                    if (flag == true) {
+                                        $.ajax({
+                                            url: '/admins/delet-data',
+                                            data: { id: deletID },
+                                            success: function (res) {
+                                                location.reload();
+                                            }
+                                        })
+                                    } else {
+                                        return;
+                                    }
+                                });
+                            }
+                        })
+                    }
+                });
+                pageIndex.init();
+            }
+
+        })
+
+
+
+        // ========================
+        window.onload = function () {
+
+        }
+
+    </script>
+</body>
+
+</html>

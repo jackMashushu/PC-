@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="header">
+        <div class="header-title"><p class="header-title-p">简易后台/POORCMS</p></div>
+        <div class="header-list">
+            <ul class="fun-table">                   
+                <li class=" {{currentLink=='userEdit'?'active':''}}"><i class="fa fa-book" aria-hidden="true"></i>  &nbsp;&nbsp;
+                    <a class="alis" href="/admins/userEdit">用户管理</a></li>
+                <li class=" {{currentLink=='userMannage'?'active':''}}"><i class="fa fa-cog" aria-hidden="true"></i> &nbsp;&nbsp;
+                    <a class="alis" href="/admins/userMannage">用户列表</a></li>
+                <li class=" {{currentLink=='articleMan'?'active':''}}"><i class="fa fa-table" aria-hidden="true"></i>  &nbsp;&nbsp;
+                    <a class="alis" href="/admins/articleMan">文章列表</a></li>
+                <li class=" {{currentLink=='contentMan'?'active':''}}"><i class="fa fa-heart" aria-hidden="true"></i>  &nbsp;&nbsp;
+                    <a class="alis" href="/admins/contentMan">发布文章</a></li>
+            </ul>
+        </div>
+        <div class="header-footer">
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-header">           
+            <a href="/admins/logout">退出</a><a href="">资料</a><a href="">{{userInfo.username}}</a>
+            <div class="blank"></div>
+        </div>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1500, initial-scale=1.0, maximum-scale=1.0">
+    <title>全站检索</title>
+    <meta name="keywords" content="文章网,个人网站,千年文章,个人博客,原创文章,古诗集,古文,文言文,作文">
+    <meta name="description" content="个人原创博客、文章，学习经验分享，优秀经典文章，唐诗宋词收集等">   
+    <link rel="icon" href="./images/icon/w.png">
+    <link rel="stylesheet" href="/home/css/list-style.css">
+</head>
+<body>
+    <div class="nav-box">
+        <header >
+            <div class="logo"><img class="logo-img" src="./images/logos/main-logo.gif" ></div>
+            <div class="search-box">
+                <input type="text" name="" class="search-txt" placeholder="输入关键字……">
+                <input style="display:none">
+                <button class="icon"></button>
+           </div>
+            <ul class="title-nav">
+                <li><a href="/home/" target="_blank">首页</a></li>
+                <li><a href="/home/special.html?famous" target="_blank">文章</a></li>
+                <li><a href="/home/special.html" target="_blank">分享</a></li>
+                <li id="login-door"><img src="" id="head-x"><a href="../admins/login" target="_blank">登录</a></li>
+                <li><a href="/home/personal.html" target="_blank">个人中心</a></li>
+                <li ><a href="#" class="last-nav" target="_blank">更多 &dtrif;</a>
+                    <ul class="dropdown">
+                        <li id="aboutme"><a href="#">关于</a></li>
+                        <li><a >没有了</a></li>
+                      </ul>
+                </li>
+            </ul>
+        </header>
+    </div>
+    <div class="search-container">
+        <div class="big-search">
+            <form  onsubmit="return false;">
+                <div class="input-group">
+                    <input type="text" id="search" placeholder="输入关键字..." autocomplete="off">
+                    <label for="search"><img src="/home/images/icon/search.png" id="search-btn"></img></label>
+                </div>
+            </form>
+        </div>
+
+
+
+
+        <div class="search-result">
+            <span class="add-mes">统计：一共为您找到213条关于美女的数据。</span>
+            <p class="hidden-massage">空空如也，您可以尝试更换关键词重新检索。</p>
+            <ul>
+            </ul>
+            
+            <div class="pagination" id="pagi">           
+            </div>
+        </div>
+    </div>
+               
+
+
+      
+
+        <!-- 页脚部分 -->
+    <div class="footer-container">
+   
+        <div class="footer-left">
+           <span>友情链接</span>
+           <div class="friendship">         
+
+           </div>
+        </div>
+    
+        <div class="footer-mid">
+          <div><a href="">百度地图</a><a href="">文章归档</a><a href="">转载申请</a><a href="">友链申请</a></div>
+          <div><a id="beian" style="font-weight: bold;" href="http://www.beian.miit.gov.cn/" target="_blank">陕ICP备20006976号</a><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278902738'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1278902738%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></div>
+          <p>Copyright ©2020 wenhai Corporation, All Rights Reserved</p>
+          <p>转载内容版权归原作者所有，本站原创样式及文章不作商用，使用请注明并联系：h779132341@qq.com</p>
+    
+        </div>
+    
+        <div class="footer-right">
+          <section>
+            <img src="./images/QRcode/weixin.jpg" > 
+            <span>我的微信</span>
+           </section>
+          <section>
+            <img src="./images/QRcode/alipay.gif" >
+           <span>微信公众号</span>        
+          </section>
+        </div>
+    </div>
+
+
+ <!-- 遮罩层 -->
+<div class="shelter"></div>
+<!-- 登录弹出层 -->
+<div class="login-reg">
+  <form class="login-box">
+    <img src="/home/images/icon/close.png" class="img-close">
+      <h3>普通用户登录</h3>
+      <input type="email" name="username" id="log-username" placeholder="请输入邮箱……">
+      <input type="password" name="username" id="log-password" placeholder="请输入密码……">
+      <button type="button" class="login-btn" id="login-btn">登录</button>
+      <span>现在还没有账号？</span>
+      <button type="button" class="reg-button">立即注册</button>
+      <a href="/admins/login">管理员登录点这里</a>
+  </form>
+</div>
+<!-- 注册弹出层 -->
+<div class="register-box">
+  <form class="register-form">
+    <img src="/home/images/icon/close.png" class="img-reg-close">
+      <h3>普通用户注册</h3>
+      <input type="text" name="email" id="reg-username" placeholder="请输入账号">
+      <input type="password" name="password" id="reg-password" placeholder="请输入密码">
+      <input type="password" name="password" id="reg-password2" placeholder="再次输入密码">
+      <input type="text" name="username" id="reg-nickname" placeholder="请输入昵称">
+      <input type="hidden" name="head"  id="head-reg" value="\uploads\head\upload_257ff1d32d02ebfe8c4bbb8065432779.jpg">
+      <span class="warning-reg">&nbsp;</span>
+      <button type="button" class="login-btn" id="reg-btn">注册</button>
+      <span>已经有账号了？</span>
+      <button type="button" class="reg-button">立即登录</button>
+      <a href="/admins/login">管理员登录点这里</a>
+  </form>
+</div>
+<!-- 关于弹出层 -->
+<div class="aboutme">
+  <img src="/home/images/icon/close.png" class="img-close-about">
+  <div class="abt-web">
+    <h4>「关于本站」</h4>
+    <div class="abt-web-1">
+    <span>性质</span><p>网站内容全部来自网站管理者整理或原创，普通用户无法在未经同意的情况下对本站展示区域的内容进行「发布、删除、修改」。
+      本站属于文章分享、学习记录的个人博客网站，由个人独自开发完成，仅作学习交流所用，不作任何商业用途。若无意中侵犯了某些组织或个人的知识产权、肖像权、姓名权等，
+      请务必来信告知，本站定立刻删除，妥善处理。
+    </p>
+    </div>
+
+    <div class="abt-web-1">
+      <span>结构</span>
+          <div>
+           <p>前端：HTML5、CSS3、javaScript、jQuery3.41、wangEditor-3.1.1(富文本编辑器)，template-web。</p>
+           <p>后台：node.js、express框架、MongoDB 数据库、art-template。</p>
+           <p>服务器、域名来自阿里云，系统：CentOS8。个人水平底下，大佬请勿嗤笑。</p>
+          </div>
+      </div>
+
+
+  </div>
+  <div class="abt-me">
+    <h4>「关于我」</h4>
+    <p>还没想好！</p>
+  </div>
+</div>
+
+<script src="/home/js/jquery-3.4.1.min.js"></script>
+<script src="/js/pagination.js"></script>
+<script src="/js/template-web.js"></script>
+<script type="text/html" id="sum">
+  统计：一共为您找到『{{result}}』条关于“{{keyworlds}}”的数据。
+</script>
+<script id="tpl-default" type="text/html">
+  {{each result}}
+  <li class="every-article-index">
+    <img src="{{$value.cover}}" alt="">
+    <div>
+      <a href="/home/detail.html?id={{@$value._id}}" target="_blank" rel="noopener noreferrer">{{$value.title}}</a>
+      <p>摘要：{{@$value.describe.replace(/<[^>]+>/g,'').substr(0,180)+'...'}}</p>
+      <span>{{$imports.dateFormat($value.publishDate)}}发布@{{$value.author.username}} /获赞：{{$value.love}} /栏目·{{$value.class}}</span>
+    </div>
+  </li>
+  {{/each}}
+</script>
+
+<script>
+const pageHeight=$(document).height();
+
+$('.search-result').css('minHeight',pageHeight);
+// 登录盒子及遮罩层
+$('#login-door').click(function(){
+const pageHeight=$(document).height();
+const pageWidth=$(document).width();
+$('.shelter').css({
+  height:pageHeight,
+  width:pageWidth,
+  display:'block'
+});
+$('.login-reg').toggleClass('active');
+return false;
+});
+
+$('.img-close').click(function(){
+  $('.login-reg').toggleClass('active');
+  $('.shelter').css('display','none');
+});
+$('.login-btn').click(function(){
+  $(this).toggleClass('active');
+});
+// 注册相关组件
+$('.reg-button').click(function(){
+  $('.login-reg').toggleClass('active');
+  $('.register-box').toggleClass('active')
+});
+$('.img-reg-close').click(function(){
+  $('.shelter').css('display','none');
+  $('.register-box').toggleClass('active');
+});
+
+//携带的请求搜索
+template.defaults.imports.dateFormat=dateFormat;
+function dateFormat(data){
+    if(data){
+        return data.split('T')[0];
+    }else{
+        return 'err';
+    }  
+}
+$('.search-box').css('display','none');
+var  defKeywords = decodeURI(window.location.search.split('=')[1]);
+     $('#search').val(defKeywords);
+     if(defKeywords==undefined){}else{
+      $.ajax({
+       url:'/home/search',
+       type:'get',
+       data:{
+           keywords:defKeywords,
+           page:1
+       },
+       success:function(res){
+            const pageIndex=new Pagination('#'+'pagi',{
+            pagesize:7,
+            total:res.total,
+            pageChange:function(num){
+              $.ajax({
+                   url:'/home/search',
+                   type:'get',
+                   data:{keywords:defKeywords,page:num},
+                   success:function(res2){
+                     //当作者被删除，这里需要重新设定默认作者，防止渲染失败
+                     $.each(res2.pramas,function(index,items){
+                     if(items.author==null){
+                     items.author={},
+                     items.author.username="丢失"
+                    }
+                   });
+                       $('.search-result ul')[0].innerHTML='';
+                       if(res2.pramas.length==0){
+                         $('.hidden-massage').css('display','block');
+                       }else{
+                         $('.hidden-massage').css('display','none');
+                       };  
+                       const sum=template('sum',{result:res2.total,keyworlds:defKeywords});      
+                       const http=template('tpl-default',{result:res2.pramas});
+                       $('.add-mes')[0].innerHTML=sum;
+                       $('.search-result ul')[0].innerHTML=http;
+                       $('#search').val(defKeywords);                       
+                   }
+                 });
+
+            },
+            })
+        if(res.pramas.length==0){
+          const sumout=template('sum',{result:res.total,keyworlds:defKeywords});
+          $('.add-mes')[0].innerHTML=sumout;
+          return;
+        }else{
+          pageIndex.init() 
+        }
+
+       
+       }
+   });
+     }
+    
+
+
+//点击搜索请求
+$('#search-btn').on('click',function(){
+  $('#pagi')[0].innerHTML='';//每次点击都需要让分页器空，否则会同时渲染多个分页器
+   const keywords= $('#search').val();
+   $.ajax({
+       url:'/home/search',
+       type:'get',
+       data:{
+           keywords:keywords,
+           page:1
+       },
+       success:function(res){
+            const pageIndex=new Pagination('#'+'pagi',{
+            pagesize:7,
+            total:res.total,
+            pageChange:function(num){
+              $.ajax({
+                   url:'/home/search',
+                   type:'get',
+                   data:{keywords:keywords,page:num},
+                   success:function(res2){
+                     //当作者被删除，这里需要重新设定默认作者，防止渲染失败
+                     $.each(res2.pramas,function(index,items){
+                     if(items.author==null){
+                     items.author={},
+                     items.author.username="丢失"
+                    }
+                   });
+                       $('.search-result ul')[0].innerHTML='';
+                       if(res2.pramas.length==0){
+                         $('.hidden-massage').css('display','block');  
+                         $('#pagi')[0].innerHTML='';                       
+                       }else{
+                         $('.hidden-massage').css('display','none');
+                       };  
+                       const sum=template('sum',{result:res2.total,keyworlds:keywords});      
+                       const http=template('tpl-default',{result:res2.pramas});
+                       $('.add-mes')[0].innerHTML=sum;
+                       $('.search-result ul')[0].innerHTML=http;
+                       $('#search').val(keywords);                       
+                   }
+                 });
+
+            },
+            })                     
+            pageIndex.init()       
+       }
+   });
+});
+
+$(document).ready(function (){
+  $('#search').keyup(function(e){    
+    if(e.keyCode==13){
+      const keywords= $('#search').val();
+      $('#pagi')[0].innerHTML='';
+      $.ajax({
+       url:'/home/search',
+       type:'get',
+       data:{
+           keywords:keywords,
+           page:1
+       },
+       success:function(res){
+            const pageIndex=new Pagination('#'+'pagi',{
+            pagesize:7,
+            total:res.total,
+            pageChange:function(num){
+              $.ajax({
+                   url:'/home/search',
+                   type:'get',
+                   data:{keywords:keywords,page:num},
+                   success:function(res2){
+                     //当作者被删除，这里需要重新设定默认作者，防止渲染失败
+                     $.each(res2.pramas,function(index,items){
+                     if(items.author==null){
+                     items.author={},
+                     items.author.username="丢失"
+                    }
+                   });
+                       $('.search-result ul')[0].innerHTML='';
+                       if(res2.pramas.length==0){
+                         $('.hidden-massage').css('display','block');
+                         $('#pagi')[0].innerHTML='';     
+                       }else{
+                         $('.hidden-massage').css('display','none');
+                       };  
+                       const sum=template('sum',{result:res2.total,keyworlds:keywords});      
+                       const http=template('tpl-default',{result:res2.pramas});
+                       $('.add-mes')[0].innerHTML=sum;
+                       $('.search-result ul')[0].innerHTML=http;
+                       $('#search').val(keywords);                       
+                   }
+                 });
+
+            },
+            })
+
+        pageIndex.init() 
+       
+       }
+   });
+
+      // =====
+    }
+  });
+});
+
+
+
+// 登陆请求
+// 登录请求
+$('#login-btn').click(function(){
+  const username=$('#log-username').val();
+  const password=$('#log-password').val();
+  $.ajax({
+  url:'/admins/login',
+  type:'post',
+  data:{email:username,password:password},
+  success:function(res){
+      if(res=='fail'){
+        $('#login-btn').text('账号或密码错误！')
+      }
+      $('#login-btn').blur(function(){$(this).text('登录')});
+      if(res.flag==true){
+        for(let attr in res.cookies){
+            // 管理员跳转后台并储存cookie
+            var str=`${attr}=${res.cookies[attr]}`;
+            document.cookie=str;
+            window.location.href='/admins/userEdit';
+            }       
+        }
+        if(res.flag==false){
+          for(let attr in res.cookies){
+                var str=`${attr}=${res.cookies[attr]}`;
+                document.cookie=str
+            }
+            window.location.href='/home/personal.html';
+        }
+}});
+});
+
+// 注册请求
+$('#reg-btn').click(function(){
+  const email=$('#reg-username').val();
+  let password=$('#reg-password').val();
+  let password2=$('#reg-password2').val();
+  const username=$('#reg-nickname').val();
+  const head=$('#head-reg').val();
+  if(password==password2){
+    $.ajax({
+      url:'/home/register',
+      type:'post',
+      data:{email:email,password:password,username:username,head:head},
+      success:function(res){
+          if(res=='bingo'){
+            alert('恭喜，注册成功，请重新登陆！');
+          }else{
+          $('.warning-reg').text(res)
+          }
+      }
+    })
+  }else{
+    $('.warning-reg').text('两次密码不一致！')
+  }
+});
+// 使用cookie渲染数据===========================
+function getCookie(key){
+    var value=''
+    var co=document.cookie
+    const tmpArr=co.split('; ')
+    tmpArr.forEach(item=>{
+       var tmp=item.split('=')
+       if(tmp[0]===key){
+           value=tmp[1]
+       }
+    })
+    return value
+}
+window.addEventListener('load',function(){
+//友链请求
+$.ajax({
+  url:'/home/slide',
+  success:function(res){
+    let friendStr='';
+    $.each(res.friends,function(index,items){
+       friendStr+=`<a href="${items.path}" target="_blank">${items.keywords}</a>`
+    });
+    $('.friendship')[0].innerHTML=friendStr; 
+  }
+});
+
+// 调用cookie
+  if(getCookie('username')){
+    let headPic=getCookie('head');
+    $('#login-door a').css('display','none');
+    $('#login-door img').attr('src',headPic);
+  }else{
+    $('#login-door img').css('display','none');
+  }
+});
+
+//关于我
+$('#aboutme').click(function(){
+  $('.aboutme').css('transform','translateY(0vw)');
+});
+$('.img-close-about').click(function(){
+  $('.aboutme').css('transform','translateY(-100vw)');
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/css/user.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css">
+    <title>静态资源展示</title>
+</head>
+<body>
+    {{include './common/header.art'}}
+            <div class="content-img"> 
+                <span>注意：上传的图片尺寸保持在：800*300最合适</span>             
+                <div class="static">
+                    <input type="file" name="" id="pic-box">
+                    <button type="button" id="updata"></button>
+                    <button type="button" id="showall">显示所有</button>
+                    <button type="button" id="deletall">删除所有</button>
+                </div> 
+                <img src="/home/images/glide/2.jpg" id="previe" alt="">
+                <div id="pubu"> 
+            
+
+                </div>                                       
+            </div>
+    </div>
+    <script src="/jquery/jquery-3.4.1.min.js"></script>
+    <script>
+        $('#pic-box').change(function(){
+            const fd=new FormData;
+            fd.append('picName',$(this)[0].files[0]);
+            $.ajax({
+            url:'/admins/lunbo',
+            type:'post',
+            data:fd,
+            success:function(data){  
+                $('#updata').text('上传成功')
+                .css('backgroundColor','green');
+               $('#previe').attr('src',data);
+            },
+            processData: false,  
+            contentType: false            
+      });
+});
+      $('#showall').click(function(){
+          $.ajax({
+              url:'/admins/lunboall',
+              success:function(res){
+                var str='';
+                $.each(res,function(index,items){
+                    str+=`<div class="${items.isTop}"> 
+                        <img src="${items.path}" alt=""> 
+                        <div id="btn-imgss">
+                         <button type="button"  index="${items._id}" class="top">置顶</button> 
+                         <button type="button"  index="${items._id}" class="down">置底</button> 
+                         <button type="button"  index="${items._id}" class="delet">删除</button>                                                  
+                        </div>                       
+                    </div>`
+                });
+               $('#pubu')[0].innerHTML=str
+              }
+          })
+      })
+ $('#pubu').on('click','.top',function(){
+     $.ajax({
+         url:'/admins/lunbo-set',
+         data:{id:$(this).attr('index'),type:'update'},
+         success:function(res){ 
+            if(res=='最多展示三张！') {
+                alert(res);
+            } else{
+                $('#showall').trigger('click');
+            }                   
+         }
+     })
+ })
+
+ $('#pubu').on('click','.down',function(){
+     $.ajax({
+         url:'/admins/lunbo-set',
+         data:{id:$(this).attr('index'),type:'down'},
+         success:function(res){ 
+                $('#showall').trigger('click');                 
+         }
+     })
+ })
+ $('#pubu').on('click','.delet',function(){
+     $.ajax({
+         url:'/admins/lunbo-set',
+         data:{id:$(this).attr('index'),type:'delet'},
+         success:function(res){ 
+                $('#showall').trigger('click');                 
+         }
+     });
+ });
+ $('#deletall').click(function(){
+    $.ajax({
+              url:'/admins/lunboall',
+              data:{type:'clear'},
+              success:function(res){
+                  if(res=='bingo'){
+                    $('#showall').trigger('click');
+                    return
+                  }else{
+                      alert('操作失败！');
+                  }
+               
+              }
+    });
+ });      
+
+    </script>
+</body>
+</html>

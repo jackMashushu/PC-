@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <script >
+        var ua = navigator.userAgent;
+        var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+        isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+        isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+        isMobile = isIphone || isAndroid;
+        if(isMobile) {
+        location.href = '/home/m';
+        }else{
+        location.href = '/home/';
+        }
+    </script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .show{
+            height: auto;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            
+        }
+        img{
+            width: 100%;
+        }
+        h1{
+            display: flex;
+            position: absolute;
+            right: 100px;
+            top: 100px;
+            font-size:50px;
+            color: hotpink;
+            font-family: Microsoft jhengHei ;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="show">
+        <img src="././uploads/show/35ce33fa828ba61e5ac2d87a5634970a314e59b6.jpg" alt="">
+        <img src="././uploads/show/bd20b6fd5266d01617368e7d802bd40734fa35b6.jpg" alt="">
+        <h1>可能在改版中^_^</h1>
+    </div> -->
+</body>
+
+</html>

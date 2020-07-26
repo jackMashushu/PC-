@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/home/css/list-style.css">
+</head>
+<body>
+    <div class="nav-box">
+        <header >
+            <div class="logo"><img class="logo-img" src="./images/logos/main-logo.gif" ></div>
+            <div class="search-box">
+                <input type="text" name="" class="search-txt" placeholder="输入关键字……">
+                <button class="icon"></button>
+           </div>
+            <ul class="title-nav">
+                <li><a href="/home/index" target="blank">首页</a></li>
+                <li><a href="#" target="blank">文章</a></li>
+                <li><a href="#" target="blank">分享</a></li>
+                <li id="login-door"><a href="../admins/login" target="blank">登录</a></li>
+                <li><a href="#" target="blank">留言</a></li>
+                <li ><a href="#" class="last-nav" target="blank">更多 &dtrif;</a>
+                    <ul class="dropdown">
+                        <li><a href="#">精选诗歌</a></li>
+                        <li><a href="#">经典文学</a></li>
+                        <li><a href="#">发布文章</a></li>
+                        <li><a href="#">关于</a></li>
+                      </ul>
+                </li>
+            </ul>
+        </header>
+    </div>
+    <div class="search-container">
+        <div class="big-search">
+            <form >
+                <div class="input-group">
+                    <input type="text" id="search" placeholder="输入关键字..." autocomplete="off">
+                    <label for="search"><img src="/home/images/icon/search.png" id="search-btn"></img></label>
+                </div>
+            </form>
+        </div>
+
+
+
+
+        <div class="search-result">
+            <span>统计：一共为您找到213条关于美女的数据。</span>
+            <ul>
+                <li class="every-article-index">
+                  <img src="./images/show-pic/bot1.gif" alt="">
+                  <div>
+                    <a href="" target="_blank" rel="noopener noreferrer">鲁迅先生笑得连烟卷都拿不住了</a>
+                    <p>摘要：鲁迅先生的笑声是明朗的，是从心里的欢喜。若有人说了什么可笑的话，鲁迅先生笑的连烟卷都拿不住了，常常是笑的咳嗽起来。鲁迅先生走路很轻捷，尤其他人记得清楚的，是他刚抓起帽子来往头上一扣，同时左腿就伸出去了，仿佛不顾一切地走去。</p>
+                    <span>2020-4-4发布@叶锅锅 阅读2312 评论888</span>
+                  </div>
+                </li>
+                <li class="every-article-index" >
+                  <img src="./images/show-pic/bot2.jpg" alt="">
+                  <div>
+                    <a href="" target="_blank" rel="noopener noreferrer">沙伊达能迷住他的不过是情欲上的给予，而这个沙仑一定要将沙伊达的肉体</a>
+                    <p>摘要：她只对我说过一句话：“你拒绝我，伤害了我的骄傲。”每一个沙哈拉威人都是很骄傲的，我不敢常常伤害他们，也不敢不出借东西。 等我们下了天台，再去看羊，这只俘虏不但不叫，反而好像在笑，再低头一看，天啊！我辛苦了一年种出来的九棵盆景，二十五片叶子，全部被它吃得干干净净。</p>
+                    <span>2020-4-4发布@叶锅锅 阅读2312 评论888</span>
+                  </div>
+                </li>
+                <li class="every-article-index" >
+                  <img src="./images/show-pic/bot3.jpg" alt="">
+                  <div>
+                    <a href="" target="_blank" rel="noopener noreferrer">鲁迅先生笑得连烟卷都拿不住了</a>
+                    <p>摘要：鲁迅先生的笑声是明朗的，是从心里的欢喜。若有人说了什么可笑的话，鲁迅先生笑的连烟卷都拿不住了，常常是笑的咳嗽起来。鲁迅先生走路很轻捷，尤其他人记得清楚的，是他刚抓起帽子来往头上一扣，同时左腿就伸出去了，仿佛不顾一切地走去。</p>
+                    <span>2020-4-4发布@叶锅锅 阅读2312 评论888</span>
+                  </div>
+                </li>
+                <li class="every-article-index" >
+                  <img src="./images/show-pic/bot4.jpg" alt="">
+                  <div>
+                    <a href="" target="_blank" rel="noopener noreferrer">鲁迅先生笑得连烟卷都拿不住了</a>
+                    <p>摘要：鲁迅先生的笑声是明朗的，是从心里的欢喜。若有人说了什么可笑的话，鲁迅先生笑的连烟卷都拿不住了，常常是笑的咳嗽起来。鲁迅先生走路很轻捷，尤其他人记得清楚的，是他刚抓起帽子来往头上一扣，同时左腿就伸出去了，仿佛不顾一切地走去。</p>
+                    <span>2020-4-4发布@叶锅锅 阅读2312 评论888</span>
+                  </div>
+                </li>
+                <li class="every-article-index" >
+                  <img src="./images/show-pic/bot5.jpg" alt="">
+                  <div>
+                    <a href="" target="_blank" rel="noopener noreferrer">鲁迅先生笑得连烟卷都拿不住了</a>
+                    <p>摘要：鲁迅先生的笑声是明朗的，是从心里的欢喜。若有人说了什么可笑的话，鲁迅先生笑的连烟卷都拿不住了，常常是笑的咳嗽起来。鲁迅先生走路很轻捷，尤其他人记得清楚的，是他刚抓起帽子来往头上一扣，同时左腿就伸出去了，仿佛不顾一切地走去。</p>
+                    <span>2020-4-4发布@叶锅锅 阅读2312 评论888</span>
+                  </div>
+                </li>
+                <li class="every-article-index" >
+                  <img src="./images/show-pic/bot4.jpg" alt="">
+                  <div>
+                    <a href="" target="_blank" rel="noopener noreferrer">鲁迅先生笑得连烟卷都拿不住了</a>
+                    <p>摘要：鲁迅先生的笑声是明朗的，是从心里的欢喜。若有人说了什么可笑的话，鲁迅先生笑的连烟卷都拿不住了，常常是笑的咳嗽起来。鲁迅先生走路很轻捷，尤其他人记得清楚的，是他刚抓起帽子来往头上一扣，同时左腿就伸出去了，仿佛不顾一切地走去。</p>
+                    <span>2020-4-4发布@叶锅锅 阅读2312 评论888</span>
+                  </div>
+                </li>
+                <li class="every-article-index">
+                  <img src="./images/show-pic/bot3.jpg" alt="">
+                  <div>
+                    <a href="" target="_blank" rel="noopener noreferrer">鲁迅先生笑得连烟卷都拿不住了</a>
+                    <p>摘要：鲁迅先生的笑声是明朗的，是从心里的欢喜。若有人说了什么可笑的话，鲁迅先生笑的连烟卷都拿不住了，常常是笑的咳嗽起来。鲁迅先生走路很轻捷，尤其他人记得清楚的，是他刚抓起帽子来往头上一扣，同时左腿就伸出去了，仿佛不顾一切地走去。</p>
+                    <span>2020-4-4发布@叶锅锅 阅读2312 评论888</span>
+                  </div>
+                </li>
+              </ul>
+        </div>
+    </div>
+               
+
+
+      
+
+        <!-- 页脚部分 -->
+    <div class="footer-container">
+   
+        <div class="footer-left">
+           <span>友情链接</span>
+           <div class="friendship">         
+             <a href="">中国共青团</a>
+             <a href="">中国摄影协会</a>
+             <a href="">程序员联盟</a>
+             <a href="">新东方厨师</a>
+             <a href="">山东蓝翔</a>
+             <a href="">六小龄童电影</a>
+             <a href="">咪咕音乐</a>
+           </div>
+        </div>
+    
+        <div class="footer-mid">
+          <div><a href="">百度地图</a><a href="">文章归档</a><a href="">转载申请</a><a href="">友链申请</a></div>
+          <a href="">陕西公安备 324234324-1</a><p>Copyright ©2020 叶锅锅 Corporation, All Rights Reserved</p>
+          <p>转载内容版权归作者及来源网站所有，本站样式设计及原创文章未经许可禁止套用和转载，联系：h779132341@qq.com</p>
+    
+        </div>
+    
+        <div class="footer-right">
+          <section>
+            <img src="./images/QRcode/weixin.jpg" > 
+            <span>我的微信</span>
+           </section>
+          <section>
+            <img src="./images/QRcode/alipay.gif" >
+           <span>微信公众号</span>        
+          </section>
+        </div>
+    </div>
+
+
+    <!-- 遮罩层 -->
+<div class="shelter"></div>
+<!-- 登录弹出层 -->
+<div class="login-reg">
+  <form class="login-box">
+    <img src="/home/images/icon/close.png" class="img-close">
+      <h3>普通用户登录</h3>
+      <input type="text" name="username" id="log-username" placeholder="请输入账号……">
+      <input type="password" name="username" id="log-password" placeholder="请输入密码……">
+      <button type="button" class="login-btn">登录</button>
+      <span>现在还没有账号？</span>
+      <button type="button" class="reg-button">立即注册</button>
+      <a href="/admins/login">管理员登录点这里</a>
+  </form>
+</div>
+<!-- 注册弹出层 -->
+<div class="register-box">
+  <form class="register-form">
+    <img src="/home/images/icon/close.png" class="img-reg-close">
+      <h3>普通用户注册</h3>
+      <input type="text" name="username" id="log-username" placeholder="请输入账号">
+      <input type="password" name="username" id="log-password" placeholder="请输入密码">
+      <input type="password" name="username" id="log-password" placeholder="再次输入密码">
+      <input type="password" name="nickname" id="log-password" placeholder="请输入昵称">
+      <span class="warning-reg">&nbsp;</span>
+      <button type="button" class="login-btn">注册</button>
+      <span>已经有账号了？</span>
+      <button type="button" class="reg-button">立即登录</button>
+      <a href="/admins/login">管理员登录点这里</a>
+  </form>
+</div>
+
+
+<script src="/home/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/template-web.js"></script>
+<script id="tpl" type="text/html">
+  <h1>{{name}}已经{{age}}</h1>
+</script>
+<script>
+var html=template('tpl',{name:'jack',age:12})
+console.log(html)
+</script>
+
+
+
+<script>
+const pageHeight=$(document).height();
+const pageWidth=$(document).width();
+
+// 登录盒子及遮罩层
+$('#login-door').click(function(){
+$('.shelter').css({
+  height:pageHeight,
+  width:pageWidth,
+  display:'block'
+});
+$('.login-reg').toggleClass('active');
+return false;
+});
+
+$('.img-close').click(function(){
+  $('.login-reg').toggleClass('active');
+  $('.shelter').css('display','none');
+});
+$('.login-btn').click(function(){
+  $(this).toggleClass('active');
+});
+// 注册相关组件
+$('.reg-button').click(function(){
+  $('.login-reg').toggleClass('active');
+  $('.register-box').toggleClass('active')
+});
+$('.img-reg-close').click(function(){
+  $('.shelter').css('display','none');
+  $('.register-box').toggleClass('active');
+});
+
+//搜索请求
+$('#search-btn').click(function(){
+   const keywords= $('#search').val();
+   $.ajax({
+       url:'/home/search',
+       type:'get',
+       data:{
+           keywords:keywords
+       },
+       success:function(res){
+        console.log(res)
+       }
+   })
+
+})
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1500, initial-scale=1.0, maximum-scale=1.0">
+    <title>个人中心</title>
+    <meta name="keywords" content="文章网,个人网站,千年文章,个人博客,原创文章,古诗集,古文,文言文,作文">
+    <meta name="description" content="个人原创博客、文章，学习经验分享，优秀经典文章，唐诗宋词收集等">   
+    <link rel="icon" href="./images/icon/w.png">
+    <link rel="stylesheet" href="/home/css/list-style.css">
+</head>
+<body>
+    <div class="nav-box">
+        <header >
+            <div class="logo"><img class="logo-img" src="./images/logos/main-logo.gif" ></div>
+            <div class="search-box">
+                <input type="text" id="search-inp-g" class="search-txt" placeholder="输入关键字……">
+                <button type="button" class="icon" id="search-btn-g"></button>
+           </div>
+            <ul class="title-nav">
+                <li><a href="/home/" target="_blank">首页</a></li>
+                <li><a href="/home/special.html" target="_blank">文章</a></li>
+                <li><a href="/home/special.html?hot" target="_blank">分享</a></li>
+                <li id="login-door"><img src="" id="head-x"><a href="../admins/login" target="_blank">登录</a></li>
+                <li ><a href="#" class="last-nav" target="_blank">更多 &dtrif;</a>
+                    <ul class="dropdown">
+                      <li id="aboutme"><a href="#">关于</a></li>
+                      <li><a >没有了</a></li>
+                      </ul>
+                </li>
+            </ul>
+        </header>
+    </div>
+    <div class="personal-container">
+      <div class="thems">
+        <div class="head-message">
+          <img src="" alt="">
+          <div class="name-talk">
+            <span> <img src="/home/images/icon/sm.png" alt=""></span>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="personal-nav">
+        <ul class="nav-box-p">
+          <li><img src="/home/images/icon/jia.png">个人首页</li>
+          <li><img src="/home/images/icon/write.png">发布文章</li>
+          <li id="my-atc-p"><img src="/home/images/icon/my.png">我的文章</li>
+          <li id="my-comm-p"><img src="/home/images/icon/comm.png">我的评论</li>
+          <span class="nav-spa-p"></span>
+        </ul>
+      </div>
+       
+      <div class="max-box-p">
+    <!-- 个人首页 -->
+          <div class="personal-show-box active">
+        <div class="p-header-box">
+        <h5>个人主页</h5>
+        </div>
+        <div class="per-box-container">
+          <div class="left-p-zi">
+            <div class="info-personal">
+
+              <div class="info-personal-box">
+                <!-- 默认显示 -->
+                <div class="condom-p1">
+                    <img src="" alt="">               
+                    <div id="info-personal-text">
+                      <span>昵称：测试1</span>
+                      <p class="x">账号：nver@qq.com</p>
+                      <p class="y">邮箱：暂未设置</p>
+                      <p class="z">身份：网站管理员</p>
+                    </div>
+                      <button type="button" id="head-change">随机更换头像</button>
+                      <button type="button" id="feil-change">修改个人资料</button>
+                      <button type="button" id="be-admin">成为网站管理</button>
+                </div>  
+                <!-- 修改个人资料显示    -->
+                <div class="condom-p2">
+                  <img src="/home/images/head-sculpture/blank.jpg" alt="">               
+                  <form id="change-form">                   
+                    <label for="username">昵称：</label><input type="text" name="username" id="username"></br>
+                    <label for="email">账号：</label><input type="email" name="email" id="email"></br>
+                    <label for="mood">心情：</label><input type="text" name="mood" id="mood" placeholder="18字以内……"></br> 
+                    <span>修改头像，图片不宜过大！</span><input type="file" name="head" id="change-head-p">                                
+                  </form>                    
+                    <button type="button" id="change-items">确认修改</button>
+              </div>     
+
+              </div>   
+   
+            </div>
+
+            <div class="test-box">
+              <div>
+                <img src="/home/images/icon/like.png" alt="">
+                <span class="per-describe">文章的赞</span>
+                <span class="model-num-prai">0</span>
+              </div>
+              <div>
+                <img src="/home/images/icon/allbook.png" alt="">
+                <span class="per-describe">文章总数</span>
+                <span class="model-num-all">0</span>
+              </div>
+              <div>
+                <img src="/home/images/icon/foot.png" alt="">
+                <span class="per-describe">访问次数</span>
+                <span class="model-num-foot">0</span>
+              </div>
+            </div>
+
+           
+          </div>
+
+          <div class="right-o-btn">
+            <div>              
+              <input type="text" class="leav-mes1" placeholder="双击留言可删除……">
+              <button class="leave-btn">发送留言</button>
+           </div>
+           <ul>
+           </ul>
+
+          </div>
+
+        </div>
+
+          </div>
+        
+     <!-- 发布文章 -->
+          <div class="personal-show-publish">
+        <div class="header-show-publish">
+        <h5>发布文章</h5>
+        </div>
+        <div class="per-box-container">         
+            <form id="text-write-box">
+              <input type="text" name="title" id="p-titie-box" placeholder="请输入文章标题">
+              <input type="hidden" id="p-hidden-author" name="author">
+
+              <div class="condom3">
+                 <div>
+                   <label for="pub-date">发布时间：</label>
+                   <input type="date" id="pub-date" name="publishDate">
+                 </div>
+
+                 <div>
+                  <label for="keywords">关键词（必选）：</label>
+                  <input type="text" id="keywords" name="keywords">
+                 </div>
+
+                <div>
+                  <label for="class">栏目选择(必选)</label>
+                  <select name="class" id="class-p">
+                    <option value="经典文章">经典文章</option>
+                    <option value="诗歌词曲">诗歌词曲</option>
+                    <option value="说文解字">说文解字</option>
+                    <option value="名家精选">名家精选</option>
+                    <option value="初中作文">初中作文</option>
+                    <option value="小学作文">小学作文</option>
+                    <option value="满分作文">满分作文</option>
+                    <option value="名言警句">名言警句</option>
+                    <option value="热点分析">热点分析</option>
+                    <option value="散文随记">散文随记</option>
+                    <option value="学习心得">学习心得</option>
+                    <option value="历史故事">历史故事</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="cover-preview">
+                <label for="cover">封面（必选）：</label>
+                <input type="file" id="text-cover" name="cover">
+                <span>缩略图：</span>
+                <img src="" alt="">
+                <label for="orgi" id="orginal-lab">是否原创：</label>
+                <input type="checkbox" name="orgi" id="original">
+              </div>
+
+              <!-- 富文本编辑器 -->
+              <div class="text-area">
+                  <span>请输入文章正文：</span>
+                  <div id="editor">
+                     <p>请使用文明用语！</p>
+                  </div>
+              </div>
+              <button type="button" id="article-submit">提交</button>
+            </form>
+               
+            <div class="right-o-btn">
+              <div>              
+                 <input type="text" class="leav-mes" placeholder="双击留言可删除……">
+                 <button class="leave-btn">发送留言</button>
+              </div>
+              <ul> 
+              </ul>
+            </div>
+
+        </div>
+
+          </div>
+
+      <!-- 我的文章 -->
+          <div class="personal-show-publish">
+               <div class="header-show-publish">
+               <h5>我的文章</h5>
+               </div>
+               <div class="per-box-container">
+                 <div class="tb-p-box">
+                 <table class="tb" width="90%"  border="1" id="article-list">
+                    
+                 </table>  
+                 <div class="pagination" style="margin-top: -50px;" id="pagi"> </div>
+                           
+                 </div>
+                </div>     
+              
+          </div>
+      <!-- 我的评论 -->
+      <div class="personal-show-publish">
+        <div class="header-show-publish">
+        <h5>我的文章</h5>
+        </div>
+        <div class="per-box-container">
+          <div class="tb-p-box">
+          <table class="tb" width="90%"  border="1" id="article-list1">
+               
+          </table> 
+            <div class="pagination" style="margin-top: -50px;" id="pagi1"> </div>
+
+          </div>
+         </div>     
+       
+      </div>
+
+
+      <!-- 分割线 -->
+          </div>       
+                     
+      </div>
+    <!-- 关于弹出层 -->
+<div class="aboutme">
+  <img src="/home/images/icon/close.png" class="img-close-about">
+  <div class="abt-web">
+    <h4>「关于本站」</h4>
+    <div class="abt-web-1">
+    <span>性质</span><p>网站内容全部来自网站管理者整理或原创，普通用户无法在未经同意的情况下对本站展示区域的内容进行「发布、删除、修改」。
+      本站属于文章分享、学习记录的个人博客网站，由个人独自开发完成，仅作学习交流所用，不作任何商业用途。若无意中侵犯了某些组织或个人的知识产权、肖像权、姓名权等，
+      请务必来信告知，本站定立刻删除，妥善处理。
+    </p>
+    </div>
+
+    <div class="abt-web-1">
+      <span>结构</span>
+          <div>
+           <p>前端：HTML5、CSS3、javaScript、jQuery3.41、wangEditor-3.1.1(富文本编辑器)，template-web。</p>
+           <p>后台：node.js、express框架、MongoDB 数据库、art-template。</p>
+           <p>服务器、域名来自阿里云，系统：CentOS8。个人水平底下，大佬请勿嗤笑。</p>
+          </div>
+      </div>
+
+
+  </div>
+  <div class="abt-me">
+    <h4>「关于我」</h4>
+    <p>还没想好！</p>
+  </div>
+</div>
+        <!-- 页脚部分 -->
+    <div class="footer-container">    
+   
+        <div class="footer-left">
+           <span>友情链接</span>
+           <div class="friendship">         
+
+           </div>
+        </div>
+    
+        <div class="footer-mid">
+          <div><a href="">百度地图</a><a href="">文章归档</a><a href="">转载申请</a><a href="">友链申请</a></div>
+          <div><a id="beian" style="font-weight: bold;" href="http://www.beian.miit.gov.cn/" target="_blank">陕ICP备20006976号</a><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278902738'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1278902738%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></div>
+          <p>Copyright ©2020 叶锅锅 Corporation, All Rights Reserved</p>
+          <p>转载内容版权归原作者所有，本站原创样式及文章不作商用，使用请注明并联系：h779132341@qq.com</p>
+    
+        </div>
+    
+        <div class="footer-right">
+          <section>
+            <img src="./images/QRcode/weixin.jpg" > 
+            <span>我的微信</span>
+           </section>
+          <section>
+            <img src="./images/QRcode/alipay.gif" >
+           <span>微信公众号</span>        
+          </section>
+        </div>
+    </div>
+
+
+<script src="/home/js/jquery-3.4.1.min.js"></script>
+<script src="/js/pagination.js"></script>
+<script src="/js/template-web.js"></script>
+<script src="/js/wangEditor.min.js"></script>
+<script type="text/html" id="artcle-list-p">
+  {{each result}}
+  <tr>
+    <td>{{$value._id}}</td>
+    <td>{{$value.title}}</td>
+    <td>{{$imports.dateFormat($value.publishDate)}}</td>
+    <td id="list-tools-p">
+      <img src="./images/icon/saw.png" id="saw-p" index="{{$value._id}}">
+      <img src="./images/icon/delet.png" id="delet-p" index="{{$value._id}}">
+    </td>
+  </tr>  
+  {{/each}}      
+</script>
+<script type="text/html" id="common-list-p">
+  {{each result}}
+  <tr>
+    <td>{{$value.atcId.title}}</td>              
+    <td>{{$imports.dateFormat($value.time)}}</td>
+    <td>{{$value.content}}</td>
+    <td id="list-tools-p">
+      <img src="./images/icon/saw.png" id="sawcom-p" actIdp="{{$value.atcId._id}}" index="{{$value._id}}">
+      <img src="./images/icon/delet.png" id="deletcom-p" actIdp="{{$value.atcId._id}}" index="{{$value._id}}">
+    </td>
+  </tr>              
+  {{/each}}      
+</script>
+<script type="text/html" id="leaves">
+  {{each result}}
+  <li index="{{$value._id}}">{{$value.content}}</li>
+  {{/each}}
+</script>
+
+
+<script>
+// 时间格式化
+template.defaults.imports.dateFormat=dateFormat;
+function dateFormat(data){
+    if(data){
+        return data.split('T')[0];
+    }else{
+        return '没有时间';
+    }  
+}
+// 导航样式
+$('.nav-box-p>li')
+        .mouseenter(function(){
+            $('.nav-spa-p')
+            .stop()  //在动画之前结束上次没有结束的动画
+            .animate({
+            left:$(this).width()*$(this).index()
+        },200)       
+        });
+// 修改资料
+$('#feil-change').click(function(){
+  $('.condom-p1').css('display','none');
+  $('.condom-p2').css('display','flex');
+});
+
+//导航选项卡
+$('.nav-box-p li').click(function(){
+  $('#pagi')[0].innerHTML='';
+  $('#pagi1')[0].innerHTML='';
+  $('.max-box-p>div').removeClass('active');
+  $('.max-box-p>div').eq($(this).index()).addClass('active'); 
+  //我的文章列表
+  if($(this).index()==2){
+    $.ajax({
+      url:'/home/atclist-p',
+      type:'get',
+      data:{id:getCookie('_id'),page:1},
+      success:function(res){
+        const pageIndex=new Pagination('#'+'pagi',{
+            pagesize:12,
+            total:res.total,
+            pageChange:function(num){
+                 $.ajax({
+                   url:'/home/atclist-p',
+                   type:'get',
+                   data:{id:getCookie('_id'),page:num},
+                   success:function(res2){
+                     console.log(res2)
+                     const theadStr=`<tr>
+                     <th>文章ID</th>
+                     <th>文章标题</th>
+                     <th>发布时间</th>
+                     <th>相关操作</th>
+                     </tr>`
+                     let html=template('artcle-list-p',{result:res2.article});
+                     let realhtml=theadStr+html;
+                     $('#article-list')[0].innerHTML=realhtml;                 
+                   }
+                 });
+             }
+            });
+              pageIndex.init();                 
+      }
+    });
+  }
+
+    //我的评论列表
+    if($(this).index()==3){
+    $.ajax({
+      url:'/home/common-p',
+      type:'get',
+      data:{id:getCookie('_id'),page:1},
+      success:function(res){
+        const pageIndex=new Pagination('#'+'pagi1',{
+            pagesize:10,
+            total:res.total,
+            pageChange:function(num){
+                 $.ajax({
+                   url:'/home/common-p',
+                   type:'get',
+                   data:{id:getCookie('_id'),page:num},
+                   success:function(res2){
+                     $.each(res2.common,function(index,items){
+                       if(items.atcId==null){
+                        items.atcId={}
+                        items.atcId.title="文章已被删除"                       
+                       }
+                     })
+                     const theadStr=`<tr>
+                        <th>相关文章</th>
+                        <th>评论时间</th>
+                        <th>内容概述</th>
+                        <th>相关操作</th>
+                        </tr>`
+                     let html=template('common-list-p',{result:res2.common});
+                     let realhtml=theadStr+html;
+                     $('#article-list1')[0].innerHTML=realhtml;                 
+                   }
+                 });
+             }
+            });
+              pageIndex.init();                 
+      }
+    });
+  }
+
+
+});
+// 文章和评论列表按钮点击事件
+$('#article-list').on('click','#saw-p',function(){
+  const atcnum=$(this).attr('index');
+  window.open('/home/detail.html?id='+atcnum,'_blank')
+});
+$('#article-list').on('click','#delet-p',function(){
+  const atcnum=$(this).attr('index');
+  const flag= confirm("要删吗？");
+  if(flag==true){
+    $.ajax({
+      url:'/home/frond-delet',
+      data:{id:atcnum},
+      type:'get',
+      success:function(res){
+          alert(res);
+          $('#my-atc-p').trigger('click');         
+      }
+    });
+  }
+});
+$('#article-list1').on('click','#sawcom-p',function(){
+  if(!$(this).attr('actIdp')==''){
+    window.open('/home/detail.html?id='+$(this).attr('actIdp'),'_blank');
+  }else{
+    alert('文章不存在！')
+  }
+});
+$('#article-list1').on('click','#deletcom-p',function(){
+  const commnum=$(this).attr('index');
+  const flag= confirm("删吗？");
+  if(flag==true){
+    $.ajax({
+      url:'/home/frondcomm-delet',
+      data:{id:commnum},
+      type:'get',
+      success:function(res){
+          alert(res);
+          $('#my-comm-p').trigger('click');         
+      }
+    });
+  }
+});
+//数据概览
+window.addEventListener('load',function(){
+  const id=getCookie('_id');
+   $.ajax({
+     url:'/home/model-num',
+     data:{id:id},
+     type:'get',
+     success:function(res){
+          $('.model-num-prai').text(res.praiseMode);
+          $('.model-num-all').text(res.allAticle);
+     }
+    });
+
+
+        // 匿名留言请求
+        $.ajax({
+      url:'/home/leave',
+      data:{id:getCookie('_id')},
+      type:'get',
+      success:function(res){
+           const html=template('leaves',{result:res});
+           $('.right-o-btn ul')[0].innerHTML=html;
+           $('.right-o-btn ul')[1].innerHTML=html;
+
+      }
+    });
+
+// 匿名添加
+$('.leave-btn').click(function(){
+  let prama='';
+  if($('.personal-show-box').attr('class').split(' ')[1]=='active'){
+    prama= $('.leav-mes1').val();
+  }else{
+    prama= $('.leav-mes').val();
+  }
+  if(prama.length>12||prama.length==0){
+    alert('留言不大于12字符且不小于1字符');
+    return;
+  }else{
+    $.ajax({
+    url:'/home/leave-add',
+    data:{prama:prama,userId:getCookie('_id')},
+    type:'get',
+    success:function(res){
+      const html=template('leaves',{result:res});
+           $('.right-o-btn ul')[0].innerHTML=html;
+           $('.right-o-btn ul')[1].innerHTML=html;
+    }
+  });
+  } 
+});
+
+// 删除留言
+$('.right-o-btn ul').on('dblclick','li',function(){
+    const id= $(this).attr('index');
+    $.ajax({
+       url:'/home/delet-leave',
+       data:{id:id,userId:getCookie('_id')},
+       type:'get',
+       success:function(res){
+         if(res=='fail'){
+           alert('失败！')
+         }else{
+          const html=template('leaves',{result:res});
+           $('.right-o-btn ul')[0].innerHTML=html;
+           $('.right-o-btn ul')[1].innerHTML=html;
+         }        
+       }
+    });
+});
+
+
+});
+
+//富文本编辑器
+var E = window.wangEditor
+        var editor = new E('#editor')
+        editor.create();
+//文章上传
+var newArticleForm= $('#text-write-box')[0];
+$('#article-submit').click(function(){
+  let content=editor.txt.html(); 
+  let describes=content.replace(/<[^>]+>/g,"").substr(0,200);
+  const isOrig=$("#original").prop("checked");
+  const fd=new FormData(newArticleForm);
+  fd.append('content',content);
+  fd.append('original',isOrig);
+  fd.append('describe',describes);
+  $.ajax({
+    url:'/home/articleup',
+    type:'post',
+    data:fd,
+    success:function(res){
+      console.log(res)
+      if(res=='true'){
+        alert("操作成功，请待管理员审核！")
+        location.reload();
+      }else{
+        alert(res);
+      }     
+    },
+    processData: false, 
+    contentType: false  
+  });
+});
+
+// 使用cookie渲染数据===========================
+function getCookie(key){
+    var value=''
+    var co=document.cookie
+    const tmpArr=co.split('; ')
+    tmpArr.forEach(item=>{
+       var tmp=item.split('=')
+       if(tmp[0]===key){
+           value=tmp[1]
+       }
+    })
+    return value
+}
+if(!getCookie('_id')){
+      alert('您还没有登陆');
+      window.location.href="/home/index.html";
+      }
+window.addEventListener('load',function(){
+  //友链请求
+$.ajax({
+  url:'/home/slide',
+  success:function(res){
+    let friendStr='';
+    $.each(res.friends,function(index,items){
+       friendStr+=`<a href="${items.path}" target="_blank">${items.keywords}</a>`
+    });
+    $('.friendship')[0].innerHTML=friendStr; 
+  }
+});
+// 调用cookie
+  if(getCookie('username')){
+    var headPic=getCookie('head');
+    $('#login-door a').css('display','none');
+    $('#login-door img').attr('src',headPic);
+  }else{
+    $('#login-door img').css('display','none');
+  }
+  const html=getCookie('username')+'<img src="/home/images/icon/sm.png" alt="">'
+  $('.name-talk').find('span')[0].innerHTML=html
+  $('.head-message>img,.condom-p1>img').attr('src',headPic);
+  $('.condom-p1 span')[0].innerHTML="昵称："+getCookie('username');
+  $('#info-personal-text').find('.x')[0].innerHTML="账号："+getCookie('email');
+  if(getCookie('identity')=="admin"){
+    $('#info-personal-text').find('.z')[0].innerHTML="身份："+"网站管理员";
+  }else{
+    $('#info-personal-text').find('.z')[0].innerHTML="身份："+"普通用户";
+  } 
+  $('.name-talk p').text(getCookie('mood'));
+  $('#p-hidden-author').val(getCookie('_id'));
+});
+
+// 修改个人资料
+$('#be-admin').click(function(){
+  alert("暂未设置，敬请期待");
+})
+$('#feil-change').click(function(){
+  $('#username').attr('value',getCookie('username'));
+  $('#email').attr('value',getCookie('email'));
+  $('#mood').attr('value',getCookie('mood'));
+  // $('.condom-p2').find('img').attr('src',getCookie('head'));
+});
+$('#change-items').click(function(){
+  const username=$('#username').val();
+  const email=$('#email').val();
+  const head=$('.condom-p2>img').attr('src');
+  const mood=$('#mood').val();
+  const id=getCookie('_id');
+  $.ajax({
+    url:'/home/filechange',
+    type:'post',
+    data:{
+      id:id,
+      username:username,
+      email:email,
+      head:head,
+      mood:mood
+    },
+    success:function(res){
+      if(res._id){
+         alert('修改成功！点击确定为您重新登陆！');
+        for(let attr in res){
+                var str=`${attr}=${res[attr]}`;
+                document.cookie=str
+            }
+            location.reload()      
+      }else{
+        alert(res);
+      }
+    }
+  })
+});
+// 用户上传头像实时预览
+$('#change-head-p').change(function(){
+  const fd=new FormData;
+  if($(this)[0].files[0]==undefined){
+    alert('请选择合适的图片');
+  }else{
+  fd.append('picName',$(this)[0].files[0]);
+  $.ajax({
+        url:'/home/preview',
+        type:'post',
+        data:fd,
+        success:function(data){      
+            $('.condom-p2>img').attr('src',data);
+        },
+        processData: false,  
+        contentType: false  
+      });
+  }
+
+});
+//封面图片实时预览
+$('#text-cover').change(function(){
+  const fd=new FormData;
+  if($(this)[0].files[0]==undefined){
+    alert('请选择合适的图片');
+  }else{
+    fd.append('picName',$(this)[0].files[0]);
+    $.ajax({
+        url:'/home/preview-cover',
+        type:'post',
+        data:fd,
+        success:function(data){      
+            $('.cover-preview>img').attr('src',data);
+        },
+        processData: false,  
+        contentType: false  
+      });
+  }
+
+});
+
+//随机头像
+$('#head-change').click(function(){
+  $.ajax({
+    url:'/home/random',
+    data:{id:getCookie('_id')},
+    success:function(res){
+        let headstr=`head=${res}`;
+        document.cookie=headstr;
+        location.reload();
+    }
+  })
+})
+//关于我
+$('#aboutme').click(function(){
+  $('.aboutme').css('transform','translateY(0vw)');
+});
+$('.img-close-about').click(function(){
+  $('.aboutme').css('transform','translateY(-100vw)');
+});
+
+
+</script>
+
+
+
+</body>
+</html>

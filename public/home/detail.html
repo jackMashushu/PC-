@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1500, initial-scale=1.0, maximum-scale=1.0">
+    <title>文章详情</title>
+    <meta name="keywords" content="文章网,个人网站,千年文章,个人博客,原创文章,古诗集,古文,文言文,作文">
+    <meta name="description" content="个人原创博客、文章，学习经验分享，优秀经典文章，唐诗宋词收集等">   
+    <link rel="icon" href="./images/icon/w.png">
+    <link rel="stylesheet" href="/home/css/list-style.css">
+</head>
+<body>
+    <div class="nav-box">
+        <header >
+            <div class="logo"><img class="logo-img" src="./images/logos/main-logo.gif" ></div>
+            <div class="search-box">
+                <input type="text" id="search-inp-g" class="search-txt" placeholder="输入关键字……">
+                <button type="button" class="icon" id="search-btn-g"></button>
+           </div>
+            <ul class="title-nav">
+                <li><a href="/home/" target="_blank">首页</a></li>
+                <li><a href="/home/special.html?hot" target="_blank">文章</a></li>
+                <li><a href="/home/special.html?famous" target="_blank">分享</a></li>
+                <li id="login-door"><img src="" id="head-x"><a href="../admins/login" target="_blank">登录</a></li>
+                <li><a href="/home/personal.html" target="_blank">个人中心</a></li>
+                <li ><a  class="last-nav" target="_blank">更多 &dtrif;</a>
+                    <ul class="dropdown">
+                        <li id="aboutme"><a href="#">关于</a></li>
+                        <li><a >没有了</a></li>
+                      </ul>
+                </li>
+            </ul>
+        </header>
+    </div>
+    <div class="container">
+        <!-- 左边盒子 -->
+        <div class="content-left-max " id="left-max-box">
+            <header>
+                <span>当前位置:</span>
+                <a href="/home/index.html" target="_blank" > <img src="./images/icon/home.png" alt=""> 首页</a>>
+                <a href="/home/special.html?hot" target="_blank" id="colum-little-co">原创专区</a>>
+                <a href="#" target="_blank" class="last-path" id="little-title"><P>{{article.title}}</P></a>
+                <div class="article-tittle-btn">
+                    <div>
+                        <img src="./images/icon/share.png" id="share-btn" alt="分享">
+                        <div class="decribe">分享</div>
+                    </div>
+                    <div>
+                        <img src="./images/icon/shoucang.png" id="collect-btn" alt="收藏">
+                        <div class="decribe">收藏</div>
+                    </div>
+                    <div>
+                        <img src="./images/icon/warning.png" id="warning-btn" alt="">
+                        <div class="decribe">举报</div>
+                    </div>
+                    <div>
+                        <img src="./images/icon/pifu.png" id="color-btn" alt="">
+                        <div class="decribe">护眼</div>
+                    </div>
+                    <div>
+                        <img src="./images/icon/kuozhan.png" id="extend-btn" alt="">
+                        <div class="decribe">变粗</div>
+                    </div>
+                    <img src="./images/icon/leftkuozhan.png" id="left-extend-btn" alt="">
+                </div>
+            </header>
+            <section class="article-area"> 
+              
+            </section>
+            <div class="related-recomend">
+                <h5>相关推荐</h5>
+                <div class="article-list">
+                                      
+                </div>
+            </div>
+
+            <div class="related-comments">
+                <h5>发表评论</h5>
+                <form class="text-collect"  method="post">
+                    <div class="emoj">立即回复：
+                        <img id="normal-com" src="./images/icon/text-normal.png" alt="">
+                        <img src="./images/icon/praise.png"  id="praise-com">
+                        <img src="./images/icon/text-good.png" id="gooda-com">
+                        <img src="./images/icon/come-on.png" id="come-on-com">
+                        <img src="./images/icon/love.png" id="my-love-com">
+                    </div>                   
+                      <div class="condom1">
+                      </div>
+                    
+                      <div class="condom2">
+                         <textarea name="" id="textarea-ele" cols="80" rows="6" placeholder="请先登录再评论……" disabled    name="content"></textarea><br>
+                         <a id="bottom-login" style="cursor: pointer;">登录</a>
+                     </div>
+                 
+                    
+                  
+                </form>
+            </div>
+
+            <div class="comments-list">
+
+               
+            </div>
+            
+        </div>
+
+
+        <!-- 右边盒子 -->
+        <div id="right-maaax">
+          <div class="content-right-max">
+            <div class="hot-label">
+                <h5> <img src="./images/icon/label.png" alt=""> 网站标签</h5>
+                <div>
+                       <a href="#" target="blank">经典文章</a>
+                       <a href="#" target="blank">初中作文</a>
+                       <a href="#" target="blank">满分作文</a>
+                       <a href="#" target="blank">童话</a>
+                       <a href="#" target="blank">原创作品</a>
+                       <a href="#" target="blank">热点新闻</a>
+                       <a href="#" target="blank">儿童文学</a>
+                       <a href="#" target="blank">javascript</a>
+                       <a href="#" target="blank">名人名言</a>
+                       <a href="#" target="blank">小说</a>
+                       <a href="#" target="blank">Vue.JS</a>
+                       <a href="#" target="blank">时事政治</a>
+                       <a href="#" target="blank">中外文学</a>
+                       <a href="#" target="blank">古代文学</a>
+                       <a href="#" target="blank">node.js</a>
+                       <a href="#" target="blank">古诗</a>
+                       <a href="#" target="blank">爱情</a>
+                       <a href="#" target="blank">HTML5</a>
+                       <a href="#" target="blank">CSS3</a>
+                       <a href="#" target="blank">奋斗</a>                   
+                </div>
+
+              </div>
+           
+
+            <div class="poem-sing">
+                <h5> <img src="./images/icon/sing.png" alt=""> 诗歌朗诵</h5>
+                <div class="myscroll">
+                    <ul>
+                        <li><a href="#">豆蔻梢头春色浅。新试纱衣，拂袖东风软。</a></li>
+                        <li><a href="#">拢鬓步摇青玉碾。缺样花枝，叶叶蜂儿颤。</a></li>
+                        <li><a href="#">林断山明竹隐墙。乱蝉衰草小池塘。</a></li>
+                        <li><a href="#">画毂雕鞍狭路逢，一声肠断绣帘中。</a></li>
+                        <li><a href="#">三山怀谢脁，水澹望长安。</a></li>
+                        <li><a href="#">芜没河阳县，秋江正北看。</a></li>
+                        <li><a href="#">旧游轻别。忍重看、锁香金箧。凄凉清夜簟席。</a></li>
+                        <li><a href="#">上帝甚蹈，无自瘵焉。俾予靖之，后予迈焉。</a></li>
+                        <li><a href="#">陌上风光浓处。第一寒梅先吐。待得春来也</a></li>
+                        <li><a href="#">红丝穿露珠帘冷，百尺哑哑下纤绠。</a></li>
+                        <li><a href="#">锦叠空床委堕红，飔飔扫尾双金凤。</a></li>
+                        <li><a href="#">蜂喧蝶驻俱悠扬，柳拂赤阑纤草长。</a></li>
+                        <li><a href="#">觉后梨花委平绿，春风和雨吹池塘。</a></li>
+                        <li><a href="#">寻寻觅觅，冷冷清清，凄凄惨惨戚戚。</a></li>
+                        <li><a href="#">满地黄花堆积，憔悴损，如今有谁堪摘？</a></li>
+                        <li><a href="#">守着窗儿，独自怎生得黑！梧桐更兼细雨，到黄昏</a></li>
+                        <li><a href="#">这次第，怎一个愁字了得！</a></li>
+                    </ul>
+                </div>
+
+            </div>
+           
+          </div>
+
+        </div>
+    </div>
+        <!-- 页脚部分 -->
+    <div class="footer-container">
+   
+        <div class="footer-left">
+           <span>友情链接</span>
+           <div class="friendship">         
+
+           </div>
+        </div>
+    
+        <div class="footer-mid">
+          <div><a href="">百度地图</a><a href="">文章归档</a><a href="">转载申请</a><a href="">友链申请</a></div>
+          <div><a id="beian" style="font-weight: bold;" href="http://www.beian.miit.gov.cn/" target="_blank">陕ICP备20006976号</a><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278902738'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1278902738%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></div>
+          <p>Copyright ©2020 wenhai Corporation, All Rights Reserved</p>
+          <p>转载内容版权归原作者所有，本站原创样式及文章不作商用，使用请注明并联系：h779132341@qq.com</p>
+    
+        </div>
+    
+        <div class="footer-right">
+          <section>
+            <img src="./images/QRcode/weixin.jpg" > 
+            <span>我的微信</span>
+           </section>
+          <section>
+            <img src="./images/QRcode/alipay.gif" >
+           <span>微信公众号</span>        
+          </section>
+        </div>
+    </div>
+
+
+<!-- 遮罩层 -->
+<div class="shelter"></div>
+<!-- 登录弹出层 -->
+<div class="login-reg">
+  <form class="login-box">
+    <img src="/home/images/icon/close.png" class="img-close">
+      <h3>普通用户登录</h3>
+      <input type="email" name="username" id="log-username" placeholder="请输入邮箱……">
+      <input type="password" name="username" id="log-password" placeholder="请输入密码……">
+      <button type="button" class="login-btn" id="login-btn">登录</button>
+      <span>现在还没有账号？</span>
+      <button type="button" class="reg-button">立即注册</button>
+      <a href="/admins/login">管理员登录点这里</a>
+  </form>
+</div>
+<!-- 注册弹出层 -->
+<div class="register-box">
+    <form class="register-form">
+      <img src="/home/images/icon/close.png" class="img-reg-close">
+        <h3>普通用户注册</h3>
+        <input type="text" name="email" id="reg-username" placeholder="请输入账号">
+        <input type="password" name="password" id="reg-password" placeholder="请输入密码">
+        <input type="password" name="password" id="reg-password2" placeholder="再次输入密码">
+        <input type="text" name="username" id="reg-nickname" placeholder="请输入昵称">
+        <input type="hidden" name="head"  id="head-reg" value="\uploads\head\upload_257ff1d32d02ebfe8c4bbb8065432779.jpg">
+        <span class="warning-reg">&nbsp;</span>
+        <button type="button" class="login-btn" id="reg-btn">注册</button>
+        <span>已经有账号了？</span>
+        <button type="button" class="reg-button">立即登录</button>
+        <a href="/admins/login">管理员登录点这里</a>
+    </form>
+  </div>
+<!-- 关于弹出层 -->
+<div class="aboutme">
+    <img src="/home/images/icon/close.png" class="img-close-about">
+    <div class="abt-web">
+      <h4>「关于本站」</h4>
+      <div class="abt-web-1">
+      <span>性质</span><p>网站内容全部来自网站管理者整理或原创，普通用户无法在未经同意的情况下对本站展示区域的内容进行「发布、删除、修改」。
+        本站属于文章分享、学习记录的个人博客网站，由个人独自开发完成，仅作学习交流所用，不作任何商业用途。若无意中侵犯了某些组织或个人的知识产权、肖像权、姓名权等，
+        请务必来信告知，本站定立刻删除，妥善处理。
+      </p>
+      </div>
+  
+      <div class="abt-web-1">
+        <span>结构</span>
+            <div>
+             <p>前端：HTML5、CSS3、javaScript、jQuery3.41、wangEditor-3.1.1(富文本编辑器)，template-web。</p>
+             <p>后台：node.js、express框架、MongoDB 数据库、art-template。</p>
+             <p>服务器、域名来自阿里云，系统：CentOS8。个人水平底下，大佬请勿嗤笑。</p>
+            </div>
+        </div>
+  
+  
+    </div>
+    <div class="abt-me">
+      <h4>「关于我」</h4>
+      <p>还没想好！</p>
+    </div>
+  </div>
+
+<script src="/home/js/jquery-3.4.1.min.js"></script>
+<script src="/js/template-web.js"></script>
+<script type="text/html" id="tpl-art">
+    <h1>{{article.title}}</h1>
+    <div class="many-messages">
+        <span>{{$imports.dateFormat(article.publishDate)}}</span>/
+        <span>{{article.author.username}}</span>/
+        <span>栏目·{{article.class}}</span>/
+        <span>{{comments.length}}个评论</span>
+    </div>
+    <article>
+      <img src="{{article.cover}}" alt="">
+      {{@article.content}}
+      
+    </article>
+    <div class="praise-box">
+        <a  class="praise"><img src="./images/icon/praise.png" > <span>{{article.love}}</span></a>
+        <a  class="pay-box"><img src="./images/icon/pay.png" ></a>
+        <a  class="poor"><img src="./images/icon/outu.png" ><span>{{article.hate}}</span></a>
+    </div>
+    <div class="next-concent">
+        <a href="/home/detail.html?id={{before._id}}"><span>上一篇：</span><p>{{before.title}}</p></a>
+        <a href="/home/other.html?id={{article.author._id}}" style="margin-left: 70px;">他的其它文章</a>
+        <a href="/home/detail.html?id={{next._id}}"><span>下一篇：</span><p>{{next.title}}</p></a>
+    </div>
+    
+</script>
+<script type="text/html" id="correlation">
+    {{each article}}
+        <a href="/home/detail.html?id={{$value._id}}"><img src="{{$value.cover}}" alt="{{$value.title}}"><span>{{$value.title}}</span></a>
+    {{/each}}
+</script>
+<script type="text/html" id="tpl-comm">
+    <h5>评论列表</h5>
+    <span>统计：本文共有{{comments.length}}人参与，留下{{comments.length}}条评论。</span>
+    <div class="com-list-all">
+        <ul>
+            {{each comments}}
+            <li>
+                <div>
+                <img  id="go-author" src="{{$value.userId.head}}" index="{{$value.userId._id}}">
+                <span>{{$value.userId.username}} 认为：</span>
+                <p>{{$imports.dateFormat($value.time)}}</p>
+                </div>
+                <p>
+                    {{$value.content}}
+                </p>
+                <div class="common-btn">
+                <button class="replay-com">回复</button>
+                <button class="delet-com">删除</button>
+                </div>
+            </li>
+            {{/each}}          
+        </ul>
+    </div>
+</script>
+<script type="text/html" id="tpl-comm-box">
+    <textarea name="content" id="textarea-ele" cols="80" rows="6" placeholder="请发表您的高论……" ></textarea><br>
+    <input type="hidden" id="userId" value="{{uId}}">
+    <input type="hidden" id="atcId" value="{{aId}}">
+    <button type="button" id="com-submit">提交</button>
+
+</script>
+
+
+<script>
+
+
+// 数据请求
+template.defaults.imports.dateFormat=dateFormat;
+function dateFormat(data){
+    if(data){
+        return data.split('T')[0];
+    }else{
+        return 'err';
+    }  
+}
+var query = window.location.search.split('=')[1];
+$.ajax({
+    url:'/home/article?id='+query,
+    type:'get',
+    success:function(result){
+           //当作者被删除，这里需要重新设定默认作者，防止渲染失败
+           $.each(result.comments,function(index,items){
+                if(items.userId==null){
+                items.userId='丢失'
+                items.userId.username='丢失'
+               }
+              });
+            //当上一篇下一篇不存在时
+            if(result.next==null){
+                result.next={};result.next.title='已经没有了';
+                result.next._id=result.article._id;
+            }
+            if(result.before==null){
+                result.before={};result.before.title='已经没有了';
+                result.before._id=result.article._id;
+            }
+        if(result.article.author==null){result.article.author='丢失'}
+        const artHtml=template('tpl-art',{article:result.article,next:result.next,before:result.before,comments:result.comments});
+        const commHtml=template('tpl-comm',{comments:result.comments});
+        const comBoxHtml=template('tpl-comm-box',{uId:getCookie('_id'),aId:query});
+        $('.article-area')[0].innerHTML=artHtml;
+        $('.comments-list')[0].innerHTML=commHtml;
+        $('.condom1')[0].innerHTML=comBoxHtml;
+        $('#colum-little-co').text(result.article.class);
+        $('#little-title').text(result.article.title);
+        $('title')[0].text=result.article.title;
+        $('meta[name="keywords"]').attr('content',result.article.keywords);
+        $('meta[name="description"]').attr('content',result.article.describe.substr(0,80));
+        if(getCookie('_id')){
+            $('.condom1').css('display','block');
+            $('.condom2').css('display','none');
+           
+        }else{
+            $('.condom1').css('display','none');
+            $('.condom2').css('display','block');
+        }
+        //头像点击事件
+        $('.comments-list').on('click','#go-author',function(){
+            window.open('/home/other.html?id='+$(this).attr('index'),'_blank')
+        })
+    }
+});
+// 相关文章，根据关键字，标题进行匹配
+$.ajax({
+    url:'/home/correlation',
+    data:{id:query},
+    type:'get',
+    success:function(res){
+        const html=template('correlation',{article:res});
+        $('.article-list')[0].innerHTML=html;
+    }
+});
+// 评论添加
+$('.condom1').on('click','button',function(){      
+    const content=$('#textarea-ele').val();
+    const atcId=$('#atcId').val();
+    const userId=$('#userId').val();
+    $.ajax({
+        url:'/home/comment',
+        type:'post',
+        data:{
+            content:content,
+            atcId:atcId,
+            userId:userId
+        },
+        success:function(){
+            location.reload()
+        }
+    });
+});
+// 文章点赞请求
+$('.article-area').on('click','.praise',function(){
+    const atcId=$('#atcId').val();
+    let num=$(this).find('span').text();
+    num++
+    $(this).find('span').text(num);
+    $.ajax({
+        url:'/home/praise',
+        type:'get',
+        data:{love:num,id:atcId},
+        success:function(res){
+            if(res=='fail'){
+                alert('已经点过了，休息一下吧！')
+            }
+        }
+    });
+    
+});
+$('.article-area').on('click','.poor',function(){
+    const atcId=$('#atcId').val();
+    let num=$(this).find('span').text();
+    num++
+    $(this).find('span').text(num);
+    $.ajax({
+        url:'/home/praise',
+        data:{hate:num,id:atcId},
+        success:function(res){
+            console.log(res);
+        }
+    });
+});
+$('.article-area').on('click','.pay-box',function(){
+    alert('作者说：呸，君子不食嗟来之食！');
+})
+
+
+// 登录请求
+$('#login-btn').click(function(){
+  const username=$('#log-username').val();
+  const password=$('#log-password').val();
+  $.ajax({
+  url:'/admins/login',
+  type:'post',
+  data:{email:username,password:password},
+  success:function(res){
+      if(res=='fail'){
+        $('#login-btn').text('账号或密码错误！')
+      }
+      $('#login-btn').blur(function(){$(this).text('登录')});
+      if(res.flag==true){
+        for(let attr in res.cookies){
+            // 管理员跳转后台并储存cookie
+            var str=`${attr}=${res.cookies[attr]}`;
+            document.cookie=str;
+            window.location.href='/admins/userEdit';
+            }       
+        }
+        if(res.flag==false){
+          for(let attr in res.cookies){
+                var str=`${attr}=${res.cookies[attr]}`;
+                document.cookie=str
+            }
+            window.location.href='/home/personal.html';
+        }
+}});
+});
+
+// 注册请求
+$('#reg-btn').click(function(){
+  const email=$('#reg-username').val();
+  let password=$('#reg-password').val();
+  let password2=$('#reg-password2').val();
+  const username=$('#reg-nickname').val();
+  const head=$('#head-reg').val();
+  if(password==password2){
+    $.ajax({
+      url:'/home/register',
+      type:'post',
+      data:{email:email,password:password,username:username,head:head},
+      success:function(res){
+          if(res=='bingo'){
+            alert('恭喜，注册成功，请重新登陆！');
+          }else{
+          $('.warning-reg').text(res)
+          }
+      }
+    })
+  }else{
+    $('.warning-reg').text('两次密码不一致！')
+  }
+});
+
+// 使用cookie渲染数据===========================
+function getCookie(key){
+    var value=''
+    var co=document.cookie
+    const tmpArr=co.split('; ')
+    tmpArr.forEach(item=>{
+       var tmp=item.split('=')
+       if(tmp[0]===key){
+           value=tmp[1]
+       }
+    })
+    return value
+}
+window.addEventListener('load',function(){
+    //友链请求
+$.ajax({
+  url:'/home/slide',
+  success:function(res){
+    let friendStr='';
+    $.each(res.friends,function(index,items){
+       friendStr+=`<a href="${items.path}" target="_blank">${items.keywords}</a>`
+    });
+    $('.friendship')[0].innerHTML=friendStr; 
+  }
+});
+// 调用cookie
+  if(getCookie('username')){
+    let headPic=getCookie('head');
+    $('#login-door a').css('display','none');
+    $('#login-door img').attr('src',headPic);
+  }else{
+    $('#login-door img').css('display','none');
+  }
+})
+
+
+
+
+window.addEventListener('load',function(){
+//    文章评论按钮
+    $('.com-list-all li').hover(function(){
+     $(this).find('.replay-com').css('display','block');
+     $(this).find('.delet-com').css('display','block');
+ },function(){
+     $(this).find('.delet-com').css('display','none');
+     $(this).find('.replay-com').css('display','none');
+ });
+
+})
+
+// 搜索跳转
+$('#search-btn-g').click(function(){
+    const sear= $('#search-inp-g').val();
+    window.location.href='/home/column.html?keywords='+sear;
+    });
+//热门标签跳转
+$('.hot-label').on('click','a',function(){
+    window.location.href='/home/column.html?keywords='+$(this).text();
+    return false
+})
+
+
+
+
+
+
+
+// 文章页顶部功能
+  $('#color-btn').click(function(){
+    $('.article-area').toggleClass('active');
+});
+$('#extend-btn').click(function(){
+ $(this).css('display','none');
+ $('#left-extend-btn').css('display','inline-block');
+ $('.content-right-max').css('display','none');
+//  $('#left-max-box').css('width','1300px');
+ $('#left-max-box').css('width','1300px');
+
+});
+$('#left-extend-btn').click(function(){
+    $('#extend-btn').css('display','inline-block');
+    $(this).css('display','none');
+    $('#left-max-box').css('width','900px');
+    $('.content-right-max').css('display','block');
+   
+});
+$('#warning-btn').click(function(){
+    const flag=confirm('文章存在问题？是否举报该文章？');
+    if(flag){
+        alert('举报成功！请待管理员反馈，谢谢！');
+    }      
+});
+$('#collect-btn').click(function(){
+    alert('后续设置收藏功能');
+});
+
+$('.article-tittle-btn>div').hover(function(){
+    $(this).find('div').css('display','block');
+},function(){
+    $(this).find('div').css('display','none');
+})
+
+// 右侧盒子固定
+$(document).scroll(function(){
+    $('.content-right-max').css('top',$(document).scrollTop());
+});
+
+
+//随机标签的颜色
+const setColor=document.querySelectorAll('.hot-label a');
+setColor.forEach(function(item,index){
+      item.style.color=`rgb(${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)})`;
+});
+setColor.forEach(function(item,index){
+    item.addEventListener('mouseover',function(){
+        this.style.backgroundColor=`rgba(${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)},0.7)`;
+        this.style.color='aliceblue';
+    })
+    //   item.style.color=`rgb(${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)})`;
+});
+
+
+
+//    文章快速评论
+ $('#normal-com').click(function(){
+ $('#textarea-ele').text('我觉得一般！希望你能意识到自己的问题并多改几遍，否则我会很失望！');
+});
+$('#praise-com').click(function(){
+ $('#textarea-ele').text('非常喜欢你的文章，我要给你一个么么哒！');
+});
+$('#gooda-com').click(function(){
+ $('#textarea-ele').text('你的文章如行云流水,一气呵成,读后如醍醐灌顶,令我茅塞顿开。');
+});
+$('#come-on-com').click(function(){
+ $('#textarea-ele').text('文章不错，但和我还有些许差距，继续加油吧！你可以赶上我的步伐！');
+});
+$('#my-love-com').click(function(){
+ $('#textarea-ele').text('我爱你，我心中的的太阳。');
+});
+
+
+//  古诗滚动效果
+(function($){
+	$.fn.myScroll = function(options){
+	//默认配置
+	var defaults = {
+		speed:40,  //滚动速度,值越大速度越慢
+		rowHeight:24 //每行的高度
+	};
+	
+	var opts = $.extend({}, defaults, options),intId = [];
+	
+	function marquee(obj, step){
+	
+		obj.find("ul").animate({
+			marginTop: '-=1'
+		},0,function(){
+				var s = Math.abs(parseInt($(this).css("margin-top")));
+				if(s >= step){
+					$(this).find("li").slice(0, 1).appendTo($(this));
+					$(this).css("margin-top", 0);
+				}
+			});
+		}
+		
+		this.each(function(i){
+			var sh = opts["rowHeight"],speed = opts["speed"],_this = $(this);
+			intId[i] = setInterval(function(){
+				if(_this.find("ul").height()<=_this.height()){
+					clearInterval(intId[i]);
+				}else{
+					marquee(_this, sh);
+				}
+			}, speed);
+
+			_this.hover(function(){
+				clearInterval(intId[i]);
+			},function(){
+				intId[i] = setInterval(function(){
+					if(_this.find("ul").height()<=_this.height()){
+						clearInterval(intId[i]);
+					}else{
+						marquee(_this, sh);
+					}
+				}, speed);
+			});
+		
+		});
+
+	}
+
+})(jQuery);
+// 古诗滚动启动器
+$(function(){
+	$('.myscroll').myScroll({
+		speed: 60,  
+		rowHeight: 26 
+	});
+});
+
+
+window.addEventListener('load',function(){
+
+// 登录盒子及遮罩层
+$('#login-door').click(function(){
+const pageHeight=$(document).height();
+const pageWidth=$(document).width();
+$('.shelter').css({
+  height:pageHeight,
+  width:pageWidth,
+  display:'block'
+});
+$('.login-reg').toggleClass('active');
+return false;
+});
+
+$('.img-close').click(function(){
+  $('.login-reg').toggleClass('active');
+  $('.shelter').css('display','none');
+});
+$('.login-btn').click(function(){
+  $(this).toggleClass('active');
+});
+// 注册相关组件
+$('.reg-button').click(function(){
+  $('.login-reg').toggleClass('active');
+  $('.register-box').toggleClass('active')
+});
+$('.img-reg-close').click(function(){
+  $('.shelter').css('display','none');
+  $('.register-box').toggleClass('active');
+
+});
+
+$('#bottom-login').click(function(){
+  const pageHeight=$(document).height();
+  const pageWidth=$(document).width();
+  $('.shelter').css({
+  height:pageHeight,
+  width:pageWidth,
+  display:'block'
+  });
+  $('.login-reg').toggleClass('active');
+  return false;
+}) ;
+
+//关于我
+$('#aboutme').click(function(){
+  $('.aboutme').css('transform','translateY(0vw)');
+});
+$('.img-close-about').click(function(){
+  $('.aboutme').css('transform','translateY(-100vw)');
+});
+
+
+
+
+});
+
+</script>
+</body>
+</html>
