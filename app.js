@@ -37,7 +37,6 @@ if(process.env.NODE_ENV=='development'){
 }
 //解决跨域问题
 // app.use(cors({
-//     origin:['http://localhost:8080/','http://192.168.1.5:8080/'],  
 //     methods:['GET','POST'],  //指定接收的请求类型
 //     alloweHeaders:['Content-Type','Authorization']  //指定header
 // }))
@@ -51,4 +50,3 @@ app.use((err,req,res,next)=>{
     res.redirect(`${path}?message=${message}`);
 });
 app.listen(80);
-console.log('服务器启动成功！');
